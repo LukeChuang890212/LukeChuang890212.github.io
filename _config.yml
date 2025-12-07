@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Ming-Ju Chuang"
+title                    : "Ming-Ju (Luke) Chuang"
 title_separator          : "-"
-name                     : &name "Luke M. Chuang"
-description              : &description "Statistics PhD student"
+name                     : &name "Ming-Ju (Luke) Chuang"
+description              : &description "Research Assistant | Incoming Ph.D. Student at University of Michigan"
 url                      : https://LukeChuang890212.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "LukeChuang890212/LukeChuang890212.github.io"
@@ -22,9 +22,9 @@ repository               : "LukeChuang890212/LukeChuang890212.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Luke M. Chuang"
-  pronouns         : # example: "she/her"  
-  bio              : "Statistics PhD student"
+  name             : "Ming-Ju (Luke) Chuang"
+  pronouns         : # example: "she/her"
+  bio              : "Research Assistant | Incoming Ph.D. Student at U-M"
   location         : "Hsinchu, Taiwan"
   employer         : "National Tsing Hua University"
   uri              : # URL
