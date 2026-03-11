@@ -4,44 +4,104 @@ excerpt: "Comprehensive categorical data modeling including linear regression di
 collection: portfolio
 ---
 
+<div style="background: linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #2dd4bf 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
+  <h2 style="color: #99f6e4; margin-top: 0; font-size: 1.6em;">Counts, Categories, and Contingency Tables</h2>
+  <p style="font-size: 1.1em; line-height: 1.7; color: #f5f5f5;">
+    A comprehensive tour of <strong>categorical data methods</strong> — from logistic regression for disease risk to Poisson models for count data, correspondence analysis for contingency tables, and symmetry tests for social mobility patterns. <strong>9 real-world datasets</strong> analyzed across 5 reports.
+  </p>
+</div>
+
 ## Data Source & Cleaning
 
-Multiple categorical and count datasets were analyzed:
-
-- **Motor Trend Car Data** (`mtcars`): 32 automobiles with fuel consumption (mpg) and 10 design/performance variables. Thorough EDA with Box-Cox transformation exploration.
-- **Cardiac Catheterization Data**: Logistic regression for coronary disease with nonlinear cholesterol effects via polynomial and restricted cubic splines.
-- **Byssinosis Occupational Data**: Binary outcome (respiratory disease) across 64 covariate classes defined by dust level, employment duration, smoking status, sex, and race.
-- **African Military Coups Data** (`faraway::africa`): Count of successful coups per country with political and economic predictors.
-- **Salmonella Colony Count Data**: Dose-response relationship with polynomial Poisson regression and overdispersion diagnostics.
-- **Danish Marital Status Data**: Age-by-marital-status contingency table modeled with Poisson regression using polynomial contrasts.
-- **Esophageal Cancer Data**: Case-control study with age, alcohol, and tobacco risk factors.
-- **Swiss Community-Education Data**: Large contingency table (X² = 5260) for correspondence analysis.
-- **British Social Mobility Data**: 6×6 intergenerational mobility table for symmetry and quasi-symmetry testing.
-
-## Exploratory Data Analysis (EDA)
-
-- Correlation matrices and pairwise scatter plots revealed multicollinearity (e.g., `cyl` vs. `vs` in mtcars).
-- Box-Cox transformation analysis suggested log-transform for mpg (λ ≈ 0).
-- Balloon plots and bar charts visualized byssinosis proportions across covariate combinations.
-- Half-normal plots of Pearson residuals identified outliers in Salmonella data.
-- Mosaic plots and chi-square tests quantified associations in contingency tables.
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 20px 0;">
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">Motor Trend Cars</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">32 automobiles, mpg + 10 predictors</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">Cardiac Catheterization</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">Logistic regression with RCS</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">Byssinosis Occupational</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">64 covariate classes, binary outcome</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">African Military Coups</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">Count data, political predictors</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">Salmonella Dose-Response</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">Polynomial Poisson + overdispersion</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">Danish Marital Status</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">Polynomial contrast Poisson</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">Esophageal Cancer</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">Case-control, alcohol + tobacco</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">Swiss Education</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">Correspondence analysis (chi2 = 5260)</p>
+  </div>
+  <div style="background: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px; border-radius: 6px;">
+    <strong style="color: #134e4a;">British Social Mobility</strong>
+    <p style="font-size: 0.85em; margin: 5px 0 0; color: #666;">6x6 symmetry/quasi-symmetry</p>
+  </div>
+</div>
 
 ## Methods
 
-- **Linear Regression with Full Diagnostics**: Leverage points, Cook's distance, jackknife residuals (Bonferroni correction), added-variable plots, non-constant variance tests, Q-Q plots for normality.
-- **Logistic Regression**: Polynomial and RCS nonlinearity; AIC-based model comparison; ROC/calibration analysis; interaction effects between age groups and cholesterol.
-- **Forward Model Selection via Deviance Tests**: Sequential addition of main effects and interactions using differences-in-deviance chi-square tests with hierarchical principle.
-- **Poisson Regression**: Count modeling with polynomial dose-response; AIC-based backward elimination; overdispersion detection and quasi-Poisson adjustment.
-- **Correspondence Analysis**: SVD decomposition of Pearson residuals producing 2D biplots for simultaneous row/column visualization.
-- **Log-Linear and Symmetry Models**: Poisson framework for contingency tables; symmetry and quasi-symmetry testing for social mobility patterns.
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div style="background: #f0fdfa; border: 2px solid #0d9488; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #134e4a; font-size: 1.05em;">Linear Regression</strong>
+    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">Full diagnostics: leverage, Cook's D, VIF</p>
+  </div>
+  <div style="background: #f0fdfa; border: 2px solid #0d9488; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #134e4a; font-size: 1.05em;">Logistic Regression</strong>
+    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">RCS, ROC, calibration, interactions</p>
+  </div>
+  <div style="background: #f0fdfa; border: 2px solid #0d9488; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #134e4a; font-size: 1.05em;">Poisson Regression</strong>
+    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">Overdispersion, quasi-Poisson</p>
+  </div>
+  <div style="background: #f0fdfa; border: 2px solid #0d9488; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #134e4a; font-size: 1.05em;">Correspondence Analysis</strong>
+    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">SVD of Pearson residuals</p>
+  </div>
+  <div style="background: #f0fdfa; border: 2px solid #0d9488; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #134e4a; font-size: 1.05em;">Log-Linear Models</strong>
+    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">Contingency table modeling</p>
+  </div>
+  <div style="background: #f0fdfa; border: 2px solid #0d9488; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #134e4a; font-size: 1.05em;">Symmetry Tests</strong>
+    <p style="margin: 8px 0 0; font-size: 0.85em; color: #666;">Social mobility patterns</p>
+  </div>
+</div>
 
-## Results & Interpretation
+## Key Results
 
-- Log-transformed mpg model (hp + wt) outperformed the untransformed model, resolving non-constant variance issues.
-- Dust exposure and employment duration were the strongest predictors of byssinosis; smoking increased odds by ~40%.
-- Political liberalization significantly decreased military coup frequency; oligarchy years and number of parties increased it.
-- Cubic polynomial provided best dose-response fit for Salmonella colonies after outlier removal and overdispersion adjustment.
-- Correspondence analysis revealed distinct education-community profiles in Swiss data.
-- Social mobility symmetry hypothesis was rejected, indicating unequal upward/downward class transitions.
+<div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 2em; font-weight: bold; color: #2dd4bf; margin: 0;">9 Datasets. 6 Method Families.</p>
+  <p style="color: #aaa; font-size: 1.1em; margin-top: 5px;">A comprehensive categorical data analysis toolkit</p>
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">~40%</span><br><span style="color: #aaa;">Smoking odds increase</span></div>
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">Cubic</span><br><span style="color: #aaa;">Best dose-response fit</span></div>
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">Rejected</span><br><span style="color: #aaa;">Mobility symmetry</span></div>
+  </div>
+</div>
 
-[Download Report 1 (PDF)](/files/CDA_HW1_Categorical.pdf) | [Download Report 2 (PDF)](/files/CDA_HW2_Categorical.pdf) | [Download Report 3 (PDF)](/files/CDA_HW3_Categorical.pdf) | [Download Report 4 (PDF)](/files/CDA_HW4_Categorical.pdf) | [Download Report 5 (PDF)](/files/CDA_HW5_Categorical.pdf)
+- Log-transformed mpg model resolved non-constant variance issues in car data.
+- **Dust exposure** and employment duration were the strongest byssinosis predictors; smoking increased odds by ~40%.
+- Political liberalization decreased coup frequency; correspondence analysis revealed distinct education-community profiles.
+- Social mobility **symmetry was rejected** — unequal upward vs. downward class transitions.
+
+<div style="margin-top: 25px;">
+  <a href="/files/CDA_HW1_Categorical.pdf" style="display: inline-block; background: #0d9488; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">Report 1</a>
+  <a href="/files/CDA_HW2_Categorical.pdf" style="display: inline-block; background: #0d9488; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">Report 2</a>
+  <a href="/files/CDA_HW3_Categorical.pdf" style="display: inline-block; background: #0d9488; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">Report 3</a>
+  <a href="/files/CDA_HW4_Categorical.pdf" style="display: inline-block; background: #0d9488; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">Report 4</a>
+  <a href="/files/CDA_HW5_Categorical.pdf" style="display: inline-block; background: #0d9488; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">Report 5</a>
+</div>

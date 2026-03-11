@@ -4,32 +4,68 @@ excerpt: "Comprehensive comparison of classification methods including logistic 
 collection: portfolio
 ---
 
+<div style="background: linear-gradient(135deg, #4a1942 0%, #893168 50%, #c94b8c 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
+  <h2 style="color: #ffb6d9; margin-top: 0; font-size: 1.6em;">Can an Algorithm Distinguish Benign from Malignant?</h2>
+  <p style="font-size: 1.1em; line-height: 1.7; color: #f5f5f5;">
+    A head-to-head comparison of <strong>6 classification methods</strong> on the Wisconsin Breast Cancer dataset. From logistic regression to KNN — every classifier was pushed to its limits on 683 tumor samples with 9 cell characteristics.
+  </p>
+</div>
+
 ## Data Source & Cleaning
 
-**Wisconsin Breast Cancer Data** from the UCI Machine Learning Repository (via R `mlbench` package): 699 observations with 9 ordinal predictors describing cell characteristics (clump thickness, uniformity of cell size/shape, marginal adhesion, epithelial cell size, bare nuclei, bland chromatin, normal nucleoli, mitoses) and 1 binary target (benign vs. malignant). 16 observations with missing values in the Bare.nuclei variable were removed, resulting in 683 complete cases. A 90/10 train-test split was applied with density-based verification to ensure the split preserved the data structure.
+**Wisconsin Breast Cancer Data** (UCI / R `mlbench`): 699 observations with 9 ordinal predictors describing cell characteristics and 1 binary target (benign vs. malignant). 16 observations with missing values removed. A 90/10 train-test split was applied with density-based verification.
 
 ## Exploratory Data Analysis (EDA)
 
-- Frequency tables revealed strongly right-skewed distributions across all predictors, with most observations concentrated at lower levels.
-- Pairwise scatter plots colored by class showed distinct distributions for benign and malignant cases across all variables, suggesting all predictors carry discriminative power.
-- Correlation analysis revealed high correlations among predictors, warranting careful consideration during modeling.
-- Bimodal distributions in most predictors reflected the underlying two-class structure.
+- Strongly right-skewed distributions across all predictors, with bimodal patterns reflecting the two-class structure.
+- Pairwise scatter plots showed distinct distributions for benign and malignant cases — all predictors carry discriminative power.
+- High correlations among predictors warranted careful modeling consideration.
 
-## Methods
+## Methods — 6-Way Classifier Showdown
 
-- **Logistic Regression**: Main-effects model with stepwise variable selection; interaction effects explored based on EDA findings.
-- **Linear Discriminant Analysis (LDA)**: Applied despite potential violation of multivariate normality.
-- **Quadratic Discriminant Analysis (QDA)**: To account for unequal covariance matrices between classes.
-- **Naive Bayes Classifier**: Both Gaussian and nonparametric kernel-based versions to handle the non-normal marginal distributions.
-- **K-Nearest Neighbors (KNN)**: Optimal k selected via cross-validation.
-- All classifiers evaluated using accuracy, false positive rate, false negative rate, and ROC/AUC analysis.
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div style="background: #fdf2f8; border: 2px solid #c94b8c; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #893168; font-size: 1.1em;">Logistic Regression</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Stepwise selection + interactions</p>
+  </div>
+  <div style="background: #fdf2f8; border: 2px solid #c94b8c; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #893168; font-size: 1.1em;">LDA</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Linear discriminant analysis</p>
+  </div>
+  <div style="background: #fdf2f8; border: 2px solid #c94b8c; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #893168; font-size: 1.1em;">QDA</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Unequal covariance matrices</p>
+  </div>
+  <div style="background: #fdf2f8; border: 2px solid #c94b8c; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #893168; font-size: 1.1em;">Naive Bayes</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Gaussian + nonparametric kernel</p>
+  </div>
+  <div style="background: #fdf2f8; border: 2px solid #c94b8c; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #893168; font-size: 1.1em;">KNN</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">CV-optimized k</p>
+  </div>
+  <div style="background: #fdf2f8; border: 2px solid #c94b8c; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #893168; font-size: 1.1em;">ROC/AUC</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Full comparison framework</p>
+  </div>
+</div>
 
-## Results & Interpretation
+## Key Results
 
-- All classifiers achieved high accuracy (>95%) on the test set, reflecting the strong discriminative signal in the cell characteristics.
-- Logistic regression and LDA provided highly interpretable results, identifying Cell.size, Bare.nuclei, and Bl.cromatin as the most influential predictors.
-- QDA and nonparametric Naive Bayes showed slight improvements by relaxing normality and equal-covariance assumptions.
+<div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 2.5em; font-weight: bold; color: #ffb6d9; margin: 0;">AUC > 0.98</p>
+  <p style="color: #aaa; font-size: 1.1em; margin-top: 5px;">All classifiers — confirming the data's strong separability</p>
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">95%+</span><br><span style="color: #aaa;">Test accuracy</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">3</span><br><span style="color: #aaa;">Top predictors identified</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">683</span><br><span style="color: #aaa;">Tumor samples</span></div>
+  </div>
+</div>
+
+- **Cell.size**, **Bare.nuclei**, and **Bl.cromatin** identified as the most influential predictors across methods.
+- QDA and nonparametric Naive Bayes showed slight improvements by relaxing distributional assumptions.
 - KNN performed competitively with an optimally tuned k, though with reduced interpretability.
-- ROC curve comparison demonstrated that all methods achieved AUC values above 0.98, confirming the data's strong separability.
 
-[Download Full Report (PDF)](/files/SL_HW2_Classification.pdf)
+<div style="margin-top: 25px;">
+  <a href="/files/SL_HW2_Classification.pdf" style="display: inline-block; background: #893168; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Full Report (PDF)</a>
+</div>

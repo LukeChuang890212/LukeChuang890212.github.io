@@ -4,41 +4,97 @@ excerpt: "PCA, factor analysis, and clustering applied to global cost-of-living 
 collection: portfolio
 ---
 
+<div style="background: linear-gradient(135deg, #78350f 0%, #b45309 50%, #f59e0b 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
+  <h2 style="color: #fef3c7; margin-top: 0; font-size: 1.6em;">What Makes a City Expensive? A Data-Driven Answer</h2>
+  <p style="font-size: 1.1em; line-height: 1.7; color: #f5f5f5;">
+    <strong>55 expenditure variables</strong> across cities worldwide — dissected with PCA, factor analysis, and clustering to reveal the hidden structure behind global cost-of-living differences.
+  </p>
+</div>
+
 ## Data Source & Cleaning
 
-**Cost-of-Living Dataset**: A comprehensive dataset covering living expenses across cities worldwide, with 55 cost variables organized into 8 domain categories:
+A comprehensive cost-of-living dataset covering 8 spending domains:
 
-| Category | Variables | Description |
-|----------|-----------|-------------|
-| Food & Dining | 1–27 | Groceries, restaurant meals, beverages |
-| Transportation | 28–35 | Public transit, fuel, taxi fares |
-| Facilities | 36–38 | Utilities, internet, phone plans |
-| Entertainment | 39–41 | Cinema, gym, leisure activities |
-| Education | 42–43 | Childcare, school fees |
-| Clothing | 43–47 | Apparel, shoes |
-| Housing | 48–53 | Rent, property prices |
-| Others | 54–55 | Miscellaneous expenses |
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 20px 0;">
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Food & Dining</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">27 variables</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Transportation</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">8 variables</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Facilities</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">3 variables</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Entertainment</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">3 variables</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Education</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">2 variables</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Clothing</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">5 variables</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Housing</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">6 variables</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 12px; border-radius: 8px; text-align: center;">
+    <strong style="color: #92400e;">Others</strong>
+    <p style="margin: 5px 0 0; font-size: 0.85em; color: #666;">2 variables</p>
+  </div>
+</div>
 
-Missing data was present and handled through **multiple imputation** (producing a fully imputed dataset stored for reproducible analysis). Data was standardized prior to multivariate analysis.
+Missing data handled through **multiple imputation**. Data standardized prior to multivariate analysis.
 
 ## Exploratory Data Analysis (EDA)
 
-- Domain-grouped summary statistics revealed large variation in cost across cities, particularly in housing and education categories.
-- Correlation analysis within and across domains identified strong intra-domain correlations (e.g., food items were highly correlated with each other) and moderate cross-domain correlations (e.g., housing costs correlated with dining costs).
-- Distribution analysis guided decisions about standardization and transformation.
+- Large variation in housing and education costs across cities.
+- Strong **intra-domain correlations** (food items correlated with each other) and moderate cross-domain correlations.
+- Distribution analysis guided standardization decisions.
 
 ## Methods
 
-- **Principal Component Analysis (PCA)**: Applied to the standardized imputed data to identify the main dimensions of variation in global living costs. Scree plot and cumulative variance plots guided component retention.
-- **Factor Analysis**: Exploratory factor analysis to identify latent spending pattern factors and relate them to the 8 predefined domain categories.
-- **Cluster Analysis**: Cities grouped by cost-of-living profiles, revealing natural tiers of expense levels.
-- **Multiple Imputation**: Missing values imputed to produce a complete dataset for downstream multivariate analysis.
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #92400e; font-size: 1.1em;">PCA</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Main dimensions of variation</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #92400e; font-size: 1.1em;">Factor Analysis</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Latent spending patterns</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #92400e; font-size: 1.1em;">Cluster Analysis</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">City groupings by cost profile</p>
+  </div>
+  <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #92400e; font-size: 1.1em;">Multiple Imputation</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Missing data handling</p>
+  </div>
+</div>
 
-## Results & Interpretation
+## Key Results
 
-- PCA revealed that a small number of components captured the majority of variation, with the first component representing overall cost level and subsequent components distinguishing specific spending patterns (e.g., high housing but moderate food costs).
-- Factor analysis produced interpretable factors that largely aligned with the predefined domain categories, validating the domain knowledge structure.
-- Cluster analysis identified distinct city groups: high-cost global cities (e.g., major Western capitals), moderate-cost cities, and low-cost cities, with sub-clusters revealing nuanced differences in spending profiles.
-- The analysis provided a data-driven framework for comparing cities beyond simple cost rankings, capturing multidimensional spending patterns useful for relocation decisions or economic policy analysis.
+<div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 2em; font-weight: bold; color: #fbbf24; margin: 0;">55 Variables → Interpretable Structure</p>
+  <p style="color: #aaa; font-size: 1.1em; margin-top: 5px;">PCA, factor analysis, and clustering reveal the anatomy of global living costs</p>
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">PC1</span><br><span style="color: #aaa;">Overall cost level</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">3 Tiers</span><br><span style="color: #aaa;">City cost clusters</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">8 Domains</span><br><span style="color: #aaa;">Factor-validated</span></div>
+  </div>
+</div>
 
-[Download Full Report (PDF)](/files/SL_Final_Cost_of_Living.pdf)
+- **PC1** captured overall cost level; subsequent PCs distinguished specific patterns (e.g., high housing but moderate food).
+- Factor analysis aligned with the 8 predefined domain categories — validating domain knowledge.
+- Cluster analysis identified **high-cost**, **moderate-cost**, and **low-cost** city groups with nuanced sub-clusters.
+
+<div style="margin-top: 25px;">
+  <a href="/files/SL_Final_Cost_of_Living.pdf" style="display: inline-block; background: #b45309; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Full Report (PDF)</a>
+</div>

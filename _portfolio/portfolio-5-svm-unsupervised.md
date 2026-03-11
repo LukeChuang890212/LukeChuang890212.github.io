@@ -4,34 +4,73 @@ excerpt: "Support vector machines with PCA-based dimensionality reduction, t-SNE
 collection: portfolio
 ---
 
+<div style="background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
+  <h2 style="color: #c4b5fd; margin-top: 0; font-size: 1.6em;">Detecting Defects in 10,000-Dimensional Space</h2>
+  <p style="font-size: 1.1em; line-height: 1.7; color: #f5f5f5;">
+    Raw images flattened into massive feature vectors, then tamed with <strong>PCA</strong>, visualized with <strong>t-SNE</strong>, and classified with <strong>SVM</strong> — a complete pipeline from pixels to predictions for casting defect detection.
+  </p>
+</div>
+
 ## Data Source & Cleaning
 
-Two problems involving high-dimensional image data were analyzed:
-
-- **Problem 1 — Large-Scale Image Classification**: A high-dimensional dataset requiring substantial preprocessing. Data was standardized to unit variance. PCA was applied for dimensionality reduction before classification. Eigen decomposition was computed on the scaled data matrix.
-- **Problem 2 — Casting Defect Detection**: 100x100 pixel grayscale images of casting products, with the goal of classifying defective vs. non-defective items. Images were flattened into feature vectors for analysis.
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; min-width: 280px; background: #f5f3ff; border-left: 5px solid #8b5cf6; padding: 20px; border-radius: 8px;">
+    <h3 style="color: #4c1d95; margin-top: 0;">Large-Scale Image Classification</h3>
+    <p>High-dimensional dataset standardized to unit variance. <strong>PCA</strong> applied for dimensionality reduction. Eigen decomposition computed on the scaled data matrix.</p>
+  </div>
+  <div style="flex: 1; min-width: 280px; background: #fdf4ff; border-left: 5px solid #a855f7; padding: 20px; border-radius: 8px;">
+    <h3 style="color: #701a75; margin-top: 0;">Casting Defect Detection</h3>
+    <p><strong>100x100 pixel</strong> grayscale images of casting products. Each image flattened into a 10,000-dimensional feature vector. Goal: defective vs. non-defective classification.</p>
+  </div>
+</div>
 
 ## Exploratory Data Analysis (EDA)
 
-- **PCA Visualization**: Eigenvalue decomposition revealed the effective dimensionality of the data. Scree plots and cumulative variance plots guided the selection of principal components.
-- **t-SNE Embedding**: t-SNE with different perplexity settings (3 and 7) was used to produce 2D visualizations, revealing natural cluster structures in the high-dimensional data.
-- **Heatmap Analysis**: Heatmaps of the image data and correlation structures provided insight into spatial patterns distinguishing defective from non-defective castings.
+- **Scree plots** and cumulative variance plots guided principal component selection.
+- **t-SNE embeddings** (perplexity 3 and 7) revealed natural cluster structures in high-dimensional space.
+- **Heatmaps** of image data showed spatial patterns distinguishing defective from non-defective castings.
 
 ## Methods
 
-- **Principal Component Analysis (PCA)**: Used as a preprocessing step for dimensionality reduction before classification, retaining components that explained sufficient variance.
-- **Support Vector Machine (SVM)**: Tuned via cross-validation with different kernel functions; applied on both the original and PCA-reduced feature spaces.
-- **Random Forest**: Used as a benchmark classifier alongside SVM.
-- **Logistic Regression**: Applied on the PCA-reduced features with BIC-based model selection.
-- **t-SNE**: Nonlinear dimensionality reduction for visualization and exploratory analysis.
-- **Cross-Validation**: Systematic hyperparameter tuning for SVM (cost parameter, kernel choice) and random forest.
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div style="background: #f5f3ff; border: 2px solid #8b5cf6; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #4c1d95; font-size: 1.1em;">PCA</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Dimensionality reduction preprocessing</p>
+  </div>
+  <div style="background: #f5f3ff; border: 2px solid #8b5cf6; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #4c1d95; font-size: 1.1em;">SVM</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">CV-tuned kernel & cost</p>
+  </div>
+  <div style="background: #f5f3ff; border: 2px solid #8b5cf6; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #4c1d95; font-size: 1.1em;">Random Forest</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Benchmark classifier</p>
+  </div>
+  <div style="background: #f5f3ff; border: 2px solid #8b5cf6; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #4c1d95; font-size: 1.1em;">Logistic on PCs</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">BIC-based selection</p>
+  </div>
+  <div style="background: #f5f3ff; border: 2px solid #8b5cf6; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #4c1d95; font-size: 1.1em;">t-SNE</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Nonlinear visualization</p>
+  </div>
+</div>
 
-## Results & Interpretation
+## Key Results
 
-- PCA effectively reduced dimensionality while retaining discriminative power, enabling efficient SVM training on very high-dimensional image data.
-- SVM achieved strong classification performance, with the tuned model demonstrating excellent ability to distinguish defective from non-defective castings.
-- Comparison across classifiers (SVM, random forest, logistic regression on PCs) showed that SVM performed competitively, particularly on the PCA-reduced features.
-- t-SNE visualizations confirmed the presence of well-separated clusters, validating the feasibility of automated defect detection.
-- The project demonstrated a complete pipeline from raw image data to classification: preprocessing, dimensionality reduction, model training, and evaluation.
+<div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 2em; font-weight: bold; color: #c4b5fd; margin: 0;">Pixels to Predictions</p>
+  <p style="color: #aaa; font-size: 1.1em; margin-top: 5px;">Complete pipeline: raw images → PCA → SVM → defect classification</p>
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">10,000→k</span><br><span style="color: #aaa;">Dimensions reduced</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">SVM</span><br><span style="color: #aaa;">Best classifier</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">t-SNE</span><br><span style="color: #aaa;">Clear cluster separation</span></div>
+  </div>
+</div>
 
-[Download Full Report (PDF)](/files/SL_HW5_SVM_Unsupervised.pdf)
+- PCA effectively reduced dimensionality while retaining discriminative power.
+- **SVM** with tuned kernel achieved excellent defect detection performance.
+- t-SNE confirmed well-separated clusters — validating automated defect detection feasibility.
+
+<div style="margin-top: 25px;">
+  <a href="/files/SL_HW5_SVM_Unsupervised.pdf" style="display: inline-block; background: #6d28d9; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Full Report (PDF)</a>
+</div>

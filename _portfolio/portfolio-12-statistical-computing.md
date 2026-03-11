@@ -4,51 +4,72 @@ excerpt: "Random variate generation, Monte Carlo integration, MCMC sampling, boo
 collection: portfolio
 ---
 
-## Data Source & Cleaning
+<div style="background: linear-gradient(135deg, #3b0764 0%, #7c3aed 50%, #a78bfa 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
+  <h2 style="color: #ddd6fe; margin-top: 0; font-size: 1.6em;">The Engine Room of Statistics — Built from Scratch</h2>
+  <p style="font-size: 1.1em; line-height: 1.7; color: #f5f5f5;">
+    Implementing the computational backbone of modern statistics: <strong>Monte Carlo</strong>, <strong>MCMC</strong>, <strong>EM algorithm</strong>, <strong>Newton-Raphson</strong>, <strong>Gaussian processes</strong>, and <strong>Bayesian optimization</strong> — all coded from the ground up across 7 reports.
+  </p>
+</div>
 
-A range of simulated and real datasets were used:
+## Methods — A Computational Statistics Roadmap
 
-- **Simulated Distributions**: Weibull, Beta, Gamma, and custom distributions generated via inverse CDF, acceptance-rejection, and MCMC methods.
-- **Monte Carlo Data**: Simulated samples for estimating kurtosis, skewness, and complex integrals with importance sampling and control variates.
-- **Normality Testing Data**: Simulated samples from normal and alternative distributions (t, chi-squared, exponential) for Jarque-Bera test power analysis.
-- **Gaussian Mixture Data**: Simulated 2D data from two-component Gaussian mixture for EM algorithm development.
-- **Heteroscedastic Regression Data**: Data with non-constant variance modeled as exponential function of covariates.
-- **Spatial Data**: Georeferenced observations for Gaussian process regression with Matern covariance estimation.
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div style="background: #faf5ff; border: 2px solid #7c3aed; padding: 18px; border-radius: 10px;">
+    <strong style="color: #3b0764; font-size: 1.1em;">Simulation & Monte Carlo</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Inverse CDF, acceptance-rejection, antithetic variates, importance sampling, control variates</p>
+    <span style="font-size: 0.8em; color: #7c3aed; font-weight: bold;">Reports 1-2</span>
+  </div>
+  <div style="background: #faf5ff; border: 2px solid #7c3aed; padding: 18px; border-radius: 10px;">
+    <strong style="color: #3b0764; font-size: 1.1em;">MCMC Sampling</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Metropolis-Hastings, Gibbs sampler, convergence diagnostics, trace plots, ESS</p>
+    <span style="font-size: 0.8em; color: #7c3aed; font-weight: bold;">Reports 1-2</span>
+  </div>
+  <div style="background: #faf5ff; border: 2px solid #7c3aed; padding: 18px; border-radius: 10px;">
+    <strong style="color: #3b0764; font-size: 1.1em;">Bootstrap & Testing</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Jarque-Bera normality test, power analysis, bootstrap, permutation tests</p>
+    <span style="font-size: 0.8em; color: #7c3aed; font-weight: bold;">Report 3</span>
+  </div>
+  <div style="background: #faf5ff; border: 2px solid #7c3aed; padding: 18px; border-radius: 10px;">
+    <strong style="color: #3b0764; font-size: 1.1em;">Newton-Raphson MLE</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Analytical gradient & Hessian, line search, heteroscedastic models</p>
+    <span style="font-size: 0.8em; color: #7c3aed; font-weight: bold;">Report 4</span>
+  </div>
+  <div style="background: #faf5ff; border: 2px solid #7c3aed; padding: 18px; border-radius: 10px;">
+    <strong style="color: #3b0764; font-size: 1.1em;">EM Algorithm</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Gaussian mixture models, E-step/M-step, monotone log-likelihood convergence</p>
+    <span style="font-size: 0.8em; color: #7c3aed; font-weight: bold;">Report 5</span>
+  </div>
+  <div style="background: #faf5ff; border: 2px solid #7c3aed; padding: 18px; border-radius: 10px;">
+    <strong style="color: #3b0764; font-size: 1.1em;">GP & Bayesian Optimization</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Matern covariance MLE, kriging, Expected Improvement acquisition</p>
+    <span style="font-size: 0.8em; color: #7c3aed; font-weight: bold;">Report 6 & Midterm</span>
+  </div>
+</div>
 
-## Exploratory Data Analysis (EDA)
+## Key Results
 
-- Empirical vs. theoretical density comparisons validated random variate generation methods.
-- Trace plots and autocorrelation diagnostics assessed MCMC chain mixing and convergence.
-- Residual plots from ordinary regression revealed heteroscedasticity patterns justifying variance modeling.
-- Scatter plots of 2D mixture data visualized overlapping clusters motivating mixture model approach.
+<div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center;">
+  <p style="font-size: 2em; font-weight: bold; color: #a78bfa; margin: 0;">Algorithms Implemented from Scratch</p>
+  <p style="color: #aaa; font-size: 1.1em; margin-top: 5px;">Every method coded, validated, and analyzed — not just called from a library</p>
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">Quadratic</span><br><span style="color: #aaa;">Newton-Raphson convergence</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">EM</span><br><span style="color: #aaa;">Recovered true parameters</span></div>
+    <div><span style="font-size: 1.8em; font-weight: bold; color: #7fecb3;">GP</span><br><span style="color: #aaa;">Calibrated uncertainty</span></div>
+  </div>
+</div>
 
-## Methods
-
-### Simulation and Monte Carlo (Reports 1-2)
-- **Random Variate Generation**: Inverse CDF method for Weibull; acceptance-rejection sampling for complex densities.
-- **Monte Carlo Integration**: Crude, antithetic variates, importance sampling, and control variate methods with variance reduction comparisons.
-- **MCMC**: Metropolis-Hastings and Gibbs sampling with convergence diagnostics (trace plots, effective sample size).
-
-### Hypothesis Testing and Bootstrap (Report 3)
-- **Jarque-Bera Normality Test**: Implemented and evaluated power via Monte Carlo simulation under multiple alternative distributions.
-- **Bootstrap and Permutation Tests**: Nonparametric inference for comparing group means and testing hypotheses.
-
-### Optimization and EM Algorithm (Reports 4-5)
-- **Newton-Raphson**: Analytical gradient and Hessian for heteroscedastic MLE; line search for step-size control.
-- **EM Algorithm**: E-step posterior class probabilities; M-step closed-form updates for mixture weights, means, and covariances; convergence via log-likelihood monitoring.
-
-### Gaussian Process and Bayesian Optimization (Reports 6 & Midterm)
-- **Gaussian Process Regression**: Matern covariance with MLE for spatial data; kriging predictions with uncertainty.
-- **Bayesian Optimization**: Expected Improvement acquisition function with GP surrogates for black-box optimization.
-- **Numerical Integration**: Adaptive quadrature for multivariate integrals; hemisphere density verification.
-
-## Results & Interpretation
-
-- Inverse CDF and acceptance-rejection methods accurately reproduced target distributions.
-- Importance sampling with well-chosen proposal distributions achieved significant variance reduction over crude Monte Carlo.
-- Jarque-Bera test showed high power against heavy-tailed alternatives but low power against symmetric non-normal distributions.
+- Importance sampling with well-chosen proposals achieved **significant variance reduction** over crude Monte Carlo.
+- Jarque-Bera test showed high power against heavy-tailed alternatives but low power against symmetric non-normals.
 - EM algorithm recovered true mixture parameters with monotone log-likelihood convergence.
-- Newton-Raphson achieved quadratic convergence to MLE, matching R's `optim` output.
+- Newton-Raphson achieved **quadratic convergence**, matching R's `optim` output.
 - GP regression with Matern covariance provided accurate spatial predictions with calibrated uncertainty bands.
 
-[Download Report 1 (PDF)](/files/SC_HW1_Computing.pdf) | [Download Report 2 (PDF)](/files/SC_HW2_Computing.pdf) | [Download Report 3 (PDF)](/files/SC_HW3_Computing.pdf) | [Download Report 4 (PDF)](/files/SC_HW4_Optimization.pdf) | [Download Report 5 (PDF)](/files/SC_HW5_EM_Algorithm.pdf) | [Download Report 6 (PDF)](/files/SC_HW6_Computing.pdf) | [Download Midterm (PDF)](/files/SC_Midterm_Computing.pdf)
+<div style="margin-top: 25px;">
+  <a href="/files/SC_HW1_Computing.pdf" style="display: inline-block; background: #7c3aed; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">HW1</a>
+  <a href="/files/SC_HW2_Computing.pdf" style="display: inline-block; background: #7c3aed; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">HW2</a>
+  <a href="/files/SC_HW3_Computing.pdf" style="display: inline-block; background: #7c3aed; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">HW3</a>
+  <a href="/files/SC_HW4_Optimization.pdf" style="display: inline-block; background: #7c3aed; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">HW4</a>
+  <a href="/files/SC_HW5_EM_Algorithm.pdf" style="display: inline-block; background: #7c3aed; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">HW5</a>
+  <a href="/files/SC_HW6_Computing.pdf" style="display: inline-block; background: #7c3aed; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">HW6</a>
+  <a href="/files/SC_Midterm_Computing.pdf" style="display: inline-block; background: #7c3aed; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; margin: 4px;">Midterm</a>
+</div>

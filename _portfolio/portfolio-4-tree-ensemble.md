@@ -4,34 +4,83 @@ excerpt: "Decision trees, random forests, gradient boosting, and nonlinear regre
 collection: portfolio
 ---
 
+<div style="background: linear-gradient(135deg, #1a4731 0%, #065f46 50%, #059669 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
+  <h2 style="color: #6ee7b7; margin-top: 0; font-size: 1.6em;">When One Tree Isn't Enough — Ensembles Take Over</h2>
+  <p style="font-size: 1.1em; line-height: 1.7; color: #f5f5f5;">
+    From a single decision tree to <strong>random forests</strong> and <strong>gradient boosting</strong> — pushing tree-based methods to their limits on <strong>731 bike-sharing</strong> records and <strong>103K airline satisfaction</strong> surveys.
+  </p>
+</div>
+
 ## Data Source & Cleaning
 
-Two datasets were analyzed:
-
-- **Bike Sharing Data**: 731 daily observations (2011–2012) with 11 predictors including calendar info (season, year, month, weekday, holiday, working day), weather conditions (weather category, temperature, humidity, wind speed), and a time index. Response: daily bike sharing count. An 80/20 train-test split was applied.
-- **Airline Customer Satisfaction Survey**: 103,594 observations (after removing missing values) with 23 predictors including demographics (gender, age), travel info (customer type, travel type, class, flight distance), service ratings (14 feedback items), and delay metrics. Response: binary satisfaction (satisfied/dissatisfied). An 80/20 train-test split was used.
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; min-width: 280px; background: #ecfdf5; border-left: 5px solid #059669; padding: 20px; border-radius: 8px;">
+    <h3 style="color: #065f46; margin-top: 0;">Bike Sharing Data</h3>
+    <p><strong>731 daily observations</strong> (2011–2012) with 11 predictors: season, weather, temperature, humidity, wind speed, and more. Response: daily bike count. 80/20 train-test split.</p>
+  </div>
+  <div style="flex: 1; min-width: 280px; background: #fef3c7; border-left: 5px solid #d97706; padding: 20px; border-radius: 8px;">
+    <h3 style="color: #92400e; margin-top: 0;">Airline Satisfaction Survey</h3>
+    <p><strong>103,594 observations</strong> with 23 predictors: demographics, travel info, 14 service ratings, delay metrics. Binary outcome: satisfied vs. dissatisfied. 80/20 split.</p>
+  </div>
+</div>
 
 ## Exploratory Data Analysis (EDA)
 
-- **Bike Sharing**: Temperature showed the strongest positive correlation with count (r = 0.627). Bike usage was higher in 2012 than 2011, likely due to system maturity. A potential quadratic effect of temperature was detected — count increased up to ~20°C then declined. Weather impact on count appeared independent of day type (holiday/working day). Interaction between temperature and season/month was identified.
-- **Airline**: Service feedback items showed strong discriminative power. Most customers were loyal and traveled for business. Departure/arrival delay distributions were severely right-skewed. Leverage points were identified in some service ratings but retained given the large sample size.
+- **Bike Sharing**: Temperature showed strongest positive correlation (r = 0.627). Quadratic temperature effect detected — usage peaks at ~20°C then declines.
+- **Airline**: Service ratings had strong discriminative power. Most customers were loyal business travelers. Delays were severely right-skewed.
 
 ## Methods
 
-**Bike Sharing (Regression):**
-- **Decision Tree**: Cost-complexity parameter tuned via 5-fold CV; pruned to 11 terminal nodes
-- **Random Forest**: Number of candidate variables (m) tuned via CV
-- **Gradient Boosting (GBM)**: Grid search over interaction depth, shrinkage parameter, and number of trees via CV
-- **Linear Regression**: Best subset selection for variable choice
-- **Nonlinear Regression**: Polynomial terms (temp²), interaction terms (temp × season/month), and B-spline with knot position selection via CV
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+  <div style="background: #ecfdf5; border: 2px solid #059669; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #065f46; font-size: 1.1em;">Decision Tree</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Pruned via cost-complexity CV</p>
+  </div>
+  <div style="background: #ecfdf5; border: 2px solid #059669; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #065f46; font-size: 1.1em;">Random Forest</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">CV-tuned m parameter</p>
+  </div>
+  <div style="background: #ecfdf5; border: 2px solid #059669; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #065f46; font-size: 1.1em;">Gradient Boosting</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Grid search: depth, shrinkage, trees</p>
+  </div>
+  <div style="background: #ecfdf5; border: 2px solid #059669; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #065f46; font-size: 1.1em;">Linear Regression</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Best subset benchmark</p>
+  </div>
+  <div style="background: #ecfdf5; border: 2px solid #059669; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #065f46; font-size: 1.1em;">Nonlinear Regression</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Polynomials + B-splines</p>
+  </div>
+  <div style="background: #fef3c7; border: 2px solid #d97706; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #92400e; font-size: 1.1em;">Noise Injection Test</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Validating importance rankings</p>
+  </div>
+</div>
 
-**Airline (Classification):**
-- **Random Forest** and **Gradient Boosting** for classification with variable importance analysis
-- Noise variables (z1–z?) injected to validate the variable importance ranking
+## Key Results
 
-## Results & Interpretation
+<div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 20px 0;">
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    <div style="flex: 1; min-width: 220px; text-align: center;">
+      <p style="font-size: 2.2em; font-weight: bold; color: #6ee7b7; margin: 5px 0;">Ensembles Win</p>
+      <p style="color: #aaa;">RF & GBM outperform single trees and linear models on bike data</p>
+    </div>
+    <div style="flex: 1; min-width: 220px; text-align: center;">
+      <p style="font-size: 2.2em; font-weight: bold; color: #fbbf24; margin: 5px 0;">103K Surveys</p>
+      <p style="color: #aaa;">Airline classification with noise-validated importance</p>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+    <div style="text-align: center;"><span style="font-size: 1.5em; font-weight: bold; color: #93c5fd;">Year + Temp</span><br><span style="color: #aaa;">Top bike predictors</span></div>
+    <div style="text-align: center;"><span style="font-size: 1.5em; font-weight: bold; color: #93c5fd;">Online Boarding</span><br><span style="color: #aaa;">Top airline predictor</span></div>
+  </div>
+</div>
 
-- **Bike Sharing**: Tree-based ensemble methods (random forest and boosting) substantially outperformed single decision trees and linear models. Year and temperature were consistently ranked as the two most important predictors. The nonlinear regression with spline basis captured the temperature threshold effect better than polynomial models. Humidity and weather category provided secondary but meaningful predictive power.
-- **Airline**: Online boarding, inflight Wi-Fi, and type of travel were among the top predictors of satisfaction. The noise variable experiment confirmed that meaningful predictors consistently ranked above injected noise, validating the variable importance framework. Business class passengers and those traveling for business showed higher satisfaction rates.
+- **Year** and **temperature** consistently ranked as top bike-sharing predictors across all methods.
+- B-spline regression captured the temperature threshold effect better than polynomial models.
+- Online boarding, inflight Wi-Fi, and travel type were the top satisfaction drivers — confirmed by noise variable injection.
 
-[Download Full Report (PDF)](/files/SL_HW4_Tree_Methods.pdf)
+<div style="margin-top: 25px;">
+  <a href="/files/SL_HW4_Tree_Methods.pdf" style="display: inline-block; background: #065f46; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Full Report (PDF)</a>
+</div>
