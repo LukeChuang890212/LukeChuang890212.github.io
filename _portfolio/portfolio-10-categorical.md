@@ -1,35 +1,47 @@
 ---
-title: "Categorical Data Analysis: Log-Linear Models, Correspondence Analysis, and Social Mobility"
-excerpt: "Chi-square tests, logistic regression for cancer risk factors, correspondence analysis for community-education patterns, and symmetry models for social mobility tables.<br/>"
+title: "Categorical Data Analysis: GLMs, Logistic Regression, Poisson Models, and Correspondence Analysis"
+excerpt: "Comprehensive categorical data modeling including linear regression diagnostics, logistic regression for disease risk, Poisson regression for count data with overdispersion, log-linear models, correspondence analysis, and symmetry testing.<br/>"
 collection: portfolio
 ---
 
 ## Data Source & Cleaning
 
-Multiple categorical datasets were analyzed:
+Multiple categorical and count datasets were analyzed:
 
-- **Esophageal Cancer Data** (R `esoph` dataset): Case-control study with age group, alcohol consumption, and tobacco use as risk factors. Response: number of cancer cases vs. controls.
-- **Swiss Community-Education Data**: Contingency table of 8 schooling levels x 12 communities, examining the association between education and residential location.
-- **British Social Mobility Data**: 6x6 mobility table comparing father's social class (1971) with son's social class (1981), testing for symmetry and quasi-symmetry in intergenerational mobility.
+- **Motor Trend Car Data** (`mtcars`): 32 automobiles with fuel consumption (mpg) and 10 design/performance variables. Thorough EDA with Box-Cox transformation exploration.
+- **Cardiac Catheterization Data**: Logistic regression for coronary disease with nonlinear cholesterol effects via polynomial and restricted cubic splines.
+- **Byssinosis Occupational Data**: Binary outcome (respiratory disease) across 64 covariate classes defined by dust level, employment duration, smoking status, sex, and race.
+- **African Military Coups Data** (`faraway::africa`): Count of successful coups per country with political and economic predictors.
+- **Salmonella Colony Count Data**: Dose-response relationship with polynomial Poisson regression and overdispersion diagnostics.
+- **Danish Marital Status Data**: Age-by-marital-status contingency table modeled with Poisson regression using polynomial contrasts.
+- **Esophageal Cancer Data**: Case-control study with age, alcohol, and tobacco risk factors.
+- **Swiss Community-Education Data**: Large contingency table (X² = 5260) for correspondence analysis.
+- **British Social Mobility Data**: 6×6 intergenerational mobility table for symmetry and quasi-symmetry testing.
 
 ## Exploratory Data Analysis (EDA)
 
-- Contingency tables and mosaic plots used to visualize categorical associations.
-- Chi-square tests for independence with large test statistics (X² = 5260 for community-education) confirmed strong associations.
-- Marginal distributions examined for potential sparsity issues.
+- Correlation matrices and pairwise scatter plots revealed multicollinearity (e.g., `cyl` vs. `vs` in mtcars).
+- Box-Cox transformation analysis suggested log-transform for mpg (λ ≈ 0).
+- Balloon plots and bar charts visualized byssinosis proportions across covariate combinations.
+- Half-normal plots of Pearson residuals identified outliers in Salmonella data.
+- Mosaic plots and chi-square tests quantified associations in contingency tables.
 
 ## Methods
 
-- **Logistic Regression**: Saturated model with all interactions, simplified via backward elimination (AIC-based). Factors converted between categorical and numerical representations to find the most parsimonious model.
-- **Correspondence Analysis**: SVD of Pearson residuals from the independence model, producing 2D biplots for simultaneous visualization of row and column categories.
-- **Log-Linear Models**: Poisson regression framework for modeling contingency table frequencies.
-- **Symmetry and Quasi-Symmetry Models**: Testing whether social mobility patterns are symmetric (equal upward and downward mobility) using specialized log-linear models with symmetric pair factors.
-- **Goodness-of-Fit**: Deviance and Pearson residual analysis for model adequacy.
+- **Linear Regression with Full Diagnostics**: Leverage points, Cook's distance, jackknife residuals (Bonferroni correction), added-variable plots, non-constant variance tests, Q-Q plots for normality.
+- **Logistic Regression**: Polynomial and RCS nonlinearity; AIC-based model comparison; ROC/calibration analysis; interaction effects between age groups and cholesterol.
+- **Forward Model Selection via Deviance Tests**: Sequential addition of main effects and interactions using differences-in-deviance chi-square tests with hierarchical principle.
+- **Poisson Regression**: Count modeling with polynomial dose-response; AIC-based backward elimination; overdispersion detection and quasi-Poisson adjustment.
+- **Correspondence Analysis**: SVD decomposition of Pearson residuals producing 2D biplots for simultaneous row/column visualization.
+- **Log-Linear and Symmetry Models**: Poisson framework for contingency tables; symmetry and quasi-symmetry testing for social mobility patterns.
 
 ## Results & Interpretation
 
-- **Cancer Study**: Age and alcohol consumption were the strongest risk factors; tobacco showed a weaker but significant main effect. No significant interactions were retained after model selection.
-- **Correspondence Analysis**: Identified distinct education-community profiles. University-level education was strongly associated with specific communities (e.g., Pully, Lausanne) while vocational training showed opposite patterns.
-- **Social Mobility**: The symmetry hypothesis was rejected, indicating that upward and downward social mobility are not equally likely in Britain, with specific class transitions showing significant asymmetry.
+- Log-transformed mpg model (hp + wt) outperformed the untransformed model, resolving non-constant variance issues.
+- Dust exposure and employment duration were the strongest predictors of byssinosis; smoking increased odds by ~40%.
+- Political liberalization significantly decreased military coup frequency; oligarchy years and number of parties increased it.
+- Cubic polynomial provided best dose-response fit for Salmonella colonies after outlier removal and overdispersion adjustment.
+- Correspondence analysis revealed distinct education-community profiles in Swiss data.
+- Social mobility symmetry hypothesis was rejected, indicating unequal upward/downward class transitions.
 
-[Download Report 1 (PDF)](/files/CDA_HW3_Categorical.pdf) | [Download Report 2 (PDF)](/files/CDA_HW5_Categorical.pdf)
+[Download Report 1 (PDF)](/files/CDA_HW1_Categorical.pdf) | [Download Report 2 (PDF)](/files/CDA_HW2_Categorical.pdf) | [Download Report 3 (PDF)](/files/CDA_HW3_Categorical.pdf) | [Download Report 4 (PDF)](/files/CDA_HW4_Categorical.pdf) | [Download Report 5 (PDF)](/files/CDA_HW5_Categorical.pdf)

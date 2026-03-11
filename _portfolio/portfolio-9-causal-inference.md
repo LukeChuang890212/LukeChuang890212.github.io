@@ -1,34 +1,45 @@
 ---
-title: "Causal Inference: Average Treatment Effect Estimation via IPTW and Standardization"
-excerpt: "Propensity score modeling, inverse probability weighting, outcome regression, and doubly robust estimation for evaluating a job training program's causal effect on salary.<br/>"
+title: "Causal Inference and Biological Data Analysis: DAGs, GLMs, Mixed-Effects Models, and Treatment Effect Estimation"
+excerpt: "DAG-based causal reasoning, Poisson GLM with offset, logistic regression with ROC/calibration, linear mixed-effects models, GEE, meta-analysis, IPTW, standardization, and doubly robust estimation.<br/>"
 collection: portfolio
 ---
 
 ## Data Source & Cleaning
 
-**Salary and Job Training Data**: Observational data on citizens' participation in a government job training program. Variables include demographic information (age, education, gender, race), baseline salary (sal05), program participation indicator (prog), and follow-up salary (sal07). The goal was to estimate the average causal effect of program participation on subsequent salary.
+Multiple biostatistical datasets were analyzed:
+
+- **Pregnancy Rate Data**: 1154 observations with count outcome (number of pregnancies), years of sexual activity as offset, and demographic predictors including age, race, marital status, and contraceptive behavior.
+- **Cardiac Catheterization Data** (`acath`): Case-control study with significant coronary disease as binary outcome, predictors including sex, age, and serum cholesterol. Split into training (acath_A) and validation (acath_B) sets.
+- **DAG Causal Data**: Directed acyclic graphs with unmeasured confounders for reasoning about causal effects, collider bias, and instrumental variables.
+- **Orthodontic Growth Data**: Longitudinal measurements of dental distance trajectories for children aged 8–14, with gender and income covariates, requiring mixed-effects modeling.
+- **BCG Vaccine Meta-Analysis Data**: 7 clinical studies comparing BCG vaccine vs. placebo for tuberculosis prevention, requiring meta-analytic methods.
+- **Salary and Job Training Data**: Observational data on program participation and salary outcomes for causal effect estimation using propensity score methods.
 
 ## Exploratory Data Analysis (EDA)
 
-- DAG (directed acyclic graph) analysis to identify confounders between treatment and outcome.
-- Propensity score distribution examined via boxplots, revealing near-zero propensities for some individuals, violating the positivity assumption.
-- Calibration plots with Hosmer-Lemeshow tests assessed propensity model adequacy.
-- Standardized mean differences (SMD) and empirical CDF comparisons used to verify covariate balance after reweighting.
+- Pearson residual analysis revealed overdispersion in the Poisson pregnancy model (dispersion ratio ≈ 2.93).
+- Nonlinear cholesterol-disease relationships explored via polynomial and restricted cubic spline fits, with likelihood ratio tests confirming significance.
+- DAG analysis identified confounders, colliders, and instrumental variables for causal reasoning.
+- Spaghetti plots of longitudinal distance trajectories revealed gender-specific growth patterns and subject-level variability.
+- Propensity score distributions examined via boxplots; positivity violations addressed by truncation.
 
 ## Methods
 
-- **Propensity Score Modeling**: Logistic regression with restricted cubic splines (RCS) for nonlinear covariate effects, iteratively refined using Hosmer-Lemeshow calibration tests.
-- **Identifying Assumptions**: Systematic verification of consistency, conditional exchangeability, and positivity. Positivity violation addressed by truncating the sample to individuals with propensity >= 3%.
-- **IPTW (Inverse Probability of Treatment Weighting)**: Horvitz-Thompson estimator with propensity-based weights; covariate balance verified via SMD < 0.1 and eCDF alignment.
-- **Standardization (Outcome Regression)**: Separate outcome models fitted for treated and untreated groups using RCS-based linear regression.
-- **Doubly Robust Estimation**: Combined IPTW and outcome regression for robustness against model misspecification.
-- **Bootstrap Inference**: Nonparametric bootstrap (B = 500) for confidence intervals and hypothesis testing of the causal effect.
+- **Poisson GLM with Offset**: Rate modeling for pregnancy counts with log(years) offset; overdispersion correction via quasi-Poisson.
+- **Logistic Regression with Diagnostics**: Polynomial and RCS nonlinearity modeling; ROC curves (AUC = 0.809), calibration plots, and Hosmer-Lemeshow tests on validation data.
+- **DAG-Based Causal Reasoning**: Identifying valid adjustment sets, instrumental variables, and collider bias in complex causal structures.
+- **Linear Mixed-Effects Models** (`lme4`): Random intercept and slope models for longitudinal orthodontic data; age centering for convergence; Kenward-Roger tests for fixed effects; parametric bootstrap for RLRT.
+- **GEE**: Marginal models with exchangeable and AR(1) working correlation; QIC/CIC for model selection.
+- **Meta-Analysis**: Common-effect and random-effects models for BCG vaccine efficacy; GLMM via `glmer`.
+- **IPTW and Standardization**: Propensity score logistic regression with RCS; Horvitz-Thompson estimator; covariate balance verification via SMD.
+- **Doubly Robust Estimation**: Combined IPTW and outcome regression with bootstrap inference (B = 500).
 
 ## Results & Interpretation
 
-- The positivity assumption was violated for the full population, leading to a refined causal query targeting individuals with >= 3% enrollment probability.
-- IPTW estimated a statistically significant positive causal effect of the program on salary, confirmed by the bootstrap 95% CI excluding zero.
-- Standardization and doubly robust estimators yielded consistent results, strengthening the causal conclusion.
-- The analysis provided actionable evidence that the city administrator could use to justify program expansion, while carefully delineating the population to which the causal conclusion applies.
+- Age was the strongest predictor of pregnancy rate; overdispersion required variance inflation adjustment.
+- Old and young participants showed significantly different nonlinear cholesterol-disease relationships (interaction p < 0.05).
+- Boys and girls had significantly different dental growth slopes (p < 0.05 by Kenward-Roger test).
+- BCG vaccine significantly lowered tuberculosis risk (OR ≈ 0.62, p < 0.001) in both fixed and random effects meta-analysis.
+- IPTW estimated a significant positive causal effect of job training on salary, confirmed by standardization and doubly robust estimators.
 
-[Download Full Report (PDF)](/files/BDA_Term_Causal_Inference.pdf)
+[Download GLM Analysis (PDF)](/files/BDA_HW1_GLM.pdf) | [Download Causal DAGs (PDF)](/files/BDA_HW2_Causal.pdf) | [Download Mixed-Effects & GEE (PDF)](/files/BDA_Midterm_Mixed_Effects.pdf) | [Download Causal Inference (PDF)](/files/BDA_Term_Causal_Inference.pdf)
