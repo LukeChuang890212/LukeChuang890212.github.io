@@ -65,7 +65,39 @@ collection: portfolio
 - Exponential MLE has variance scaling as **O(1/n)** with explicit closed-form expressions derived.
 - Weibull model captured both increasing and decreasing hazard patterns via the shape parameter.
 
+---
+
+## Final Project: Liver Cirrhosis Survival Modeling
+
+<div style="background: linear-gradient(135deg, #4a1942 0%, #7b2d5f 50%, #c2185b 100%); padding: 25px; border-radius: 12px; margin: 25px 0; color: #e0e0e0;">
+  <h3 style="color: #f8bbd0; margin-top: 0; font-size: 1.3em;">Stage-Stratified Cox PH with Forward Variable Selection</h3>
+  <p style="font-size: 1.05em; line-height: 1.7; color: #f5f5f5;">
+    A comprehensive survival analysis of the <strong>Mayo Clinic primary biliary cirrhosis</strong> dataset — stratifying patients by disease stage (1&2, 3, 4) and applying <strong>custom-implemented</strong> Cox partial likelihood optimization with forward variable selection and cross-validation.
+  </p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
+  <div style="flex: 1; min-width: 200px; background: #fce4ec; border: 2px solid #c2185b; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #880e4f; font-size: 1.05em;">Cox PH Model</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Hand-coded partial likelihood + L-BFGS-B optimization</p>
+  </div>
+  <div style="flex: 1; min-width: 200px; background: #fce4ec; border: 2px solid #c2185b; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #880e4f; font-size: 1.05em;">Forward Selection</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Deviance-based with 3-fold CV</p>
+  </div>
+  <div style="flex: 1; min-width: 200px; background: #fce4ec; border: 2px solid #c2185b; padding: 15px; border-radius: 10px; text-align: center;">
+    <strong style="color: #880e4f; font-size: 1.05em;">Stage Stratification</strong>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Separate models per disease severity</p>
+  </div>
+</div>
+
+<div style="background: #1a1a2e; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+  <p style="color: #f8bbd0; font-size: 1.3em; font-weight: bold; margin: 0;">Key Finding</p>
+  <p style="color: #ccc; margin-top: 8px; font-size: 1.05em;"><strong style="color: #f48fb1;">Bilirubin</strong> was selected across <strong style="color: #7fecb3;">100%</strong> of CV seeds in all disease stages — the most consistent predictor of survival in cirrhosis patients.</p>
+</div>
+
 <div style="margin-top: 25px;">
-  <a href="/files/SA_HW1_Survival.pdf" style="display: inline-block; background: #b91c1c; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-right: 10px;">Download Report 1 (PDF)</a>
-  <a href="/files/SA_HW2_Survival.pdf" style="display: inline-block; background: #b91c1c; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Report 2 (PDF)</a>
+  <a href="/files/SA_HW1_Survival.pdf" style="display: inline-block; background: #b91c1c; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-right: 10px;">Download HW1 (PDF)</a>
+  <a href="/files/SA_HW2_Survival.pdf" style="display: inline-block; background: #b91c1c; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-right: 10px;">Download HW2 (PDF)</a>
+  <a href="/files/SA_Final_Survival.pdf" style="display: inline-block; background: #880e4f; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Download Final Project (PDF)</a>
 </div>
