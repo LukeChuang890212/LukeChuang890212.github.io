@@ -8,6 +8,9 @@ main:
   - title: "About"
     url: /
 
+  - title: "Portfolio"
+    url: /portfolio/
+
   - title: "Research"
     url: /research/
 

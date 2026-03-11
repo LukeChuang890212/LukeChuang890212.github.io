@@ -1,14 +1,15 @@
 ---
 layout: archive
-title: "Portfolio"
+title: "Data Analysis Portfolio"
 permalink: /portfolio/
 author_profile: true
 ---
 
 {% include base_path %}
 
+<p>A collection of data analysis projects from my Statistical Learning coursework at National Tsing Hua University. Each project demonstrates end-to-end analytical workflows — from data cleaning and exploratory analysis to model fitting and interpretation — covering regression, classification, model selection, ensemble methods, SVM, and unsupervised learning.</p>
 
-{% for post in site.portfolio %}
+{% for post in site.portfolio reversed %}
   {% include archive-single.html %}
 {% endfor %}
 
