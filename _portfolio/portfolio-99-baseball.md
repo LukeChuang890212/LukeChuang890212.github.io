@@ -51,12 +51,6 @@ In baseball, the rulebook strike zone is well-defined — but the *practical* st
 
 <p style="color: #666; font-size: 0.95em;">The KDE-estimated strike zone (shaded contour) compared against the rulebook zone (dashed rectangle). When Taiwan bats (left), the zone expands well beyond the rulebook boundaries. When Australia bats (right), it shrinks — particularly at the bottom edge.</p>
 
-### Strike Zone Heatmap Comparison by Team
-
-<img src="/images/strike_zone_comparison.png" alt="Strike Zone Heatmap Comparison" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
-
-<p style="color: #666; font-size: 0.95em;">Omar Peralta's practical strike zone reconstructed via 2D Gaussian KDE. Red regions indicate high strike probability. The asymmetry is immediately visible: Taiwan faces a large, amorphous zone while Australia faces a compact, high-centered one.</p>
-
 ### Strike Zone Difference Map
 
 <img src="/images/strike_zone_diff.png" alt="Strike Zone Difference Map" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
