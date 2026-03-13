@@ -66,18 +66,18 @@ collection: portfolio
 <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); padding: 25px; border-radius: 12px; margin: 25px 0; color: #e0e0e0;">
   <h3 style="color: #93c5fd; margin-top: 0; font-size: 1.3em;">Modeling Ohtani's Hit Probability</h3>
   <p style="font-size: 1.05em; line-height: 1.7; color: #f5f5f5;">
-    Using Ohtani's complete <strong>2025 MLB season data</strong> (1,271 swings, 169 hits), I trained <strong>Random Forest</strong> and <strong>Gradient Boosting Machine</strong> models to predict P(hit) as a function of pitch location, type, speed, spin rate, and movement. The models were then applied to Cheng's actual grand slam pitch to evaluate the decision.
+    Using Ohtani's complete <strong>2025 MLB season data</strong>, I trained <strong>Random Forest</strong> and <strong>Gradient Boosting Machine</strong> models to separately predict <strong>P(swing)</strong> and <strong>P(hit|swing)</strong> as functions of pitch location, type, speed, spin rate, and movement. The combined metric <strong>P(hit) = P(swing) × P(hit|swing)</strong> gives the overall danger of each pitch. The models were then applied to Cheng's actual grand slam pitch to evaluate the decision.
   </p>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
   <div style="flex: 1; min-width: 200px; background: #eff6ff; border: 2px solid #2563eb; padding: 15px; border-radius: 10px; text-align: center;">
     <strong style="color: #1e3a5f; font-size: 1.05em;">Random Forest</strong>
-    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Non-parametric ensemble for P(swing) and P(hit|swing)</p>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Non-parametric ensemble for P(swing) and P(hit|swing) separately</p>
   </div>
   <div style="flex: 1; min-width: 200px; background: #eff6ff; border: 2px solid #2563eb; padding: 15px; border-radius: 10px; text-align: center;">
     <strong style="color: #1e3a5f; font-size: 1.05em;">GBM</strong>
-    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Gradient boosting for hit probability modeling</p>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">Gradient boosting for P(swing) and P(hit|swing) separately</p>
   </div>
   <div style="flex: 1; min-width: 200px; background: #eff6ff; border: 2px solid #2563eb; padding: 15px; border-radius: 10px; text-align: center;">
     <strong style="color: #1e3a5f; font-size: 1.05em;">SHAP Analysis</strong>
@@ -89,7 +89,7 @@ collection: portfolio
 
 <img src="/images/jpn_ohtani_hit_heatmap.png" alt="Ohtani Hit Heatmap 2025" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
 
-<p style="color: #666; font-size: 0.95em;">Ohtani's 2025 hitting profile: KDE of hit density (top-left), hit rate per zone bin (top-right), hit rate given swing (bottom-left), and single vs. extra-base hit locations (bottom-right). The red star marks Cheng's grand slam curveball location.</p>
+<p style="color: #666; font-size: 0.95em;">Ohtani's 2025 hitting profile: KDE of hit density (top-left), P(hit) per zone bin (top-right), P(hit|swing) per zone bin (bottom-left), and single vs. extra-base hit locations (bottom-right). The red star marks Cheng's grand slam curveball location. Note: P(hit) and P(hit|swing) have different spatial patterns — high P(hit) zones reflect both swing tendency and contact quality, while P(hit|swing) isolates pure contact danger.</p></invoke>
 
 ### The Grand Slam Pitch: Model Verdict
 
@@ -97,8 +97,8 @@ collection: portfolio
 
 <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 25px 0;">
   <div style="flex: 1; min-width: 250px; background: #ecfdf5; border-left: 5px solid #059669; padding: 20px; border-radius: 8px;">
-    <h3 style="color: #059669; margin-top: 0;">P(hit) = 13.2%</h3>
-    <p style="font-size: 1.05em; line-height: 1.6;">The curveball Cheng threw (76.8 mph, 2483 rpm, at pX=-0.46, pZ=2.16) had a <strong>predicted hit probability of only ~13%</strong> based on the RF/GBM ensemble. It was not a bad pitch by the numbers.</p>
+    <h3 style="color: #059669; margin-top: 0;">P(hit|swing) = 13.2%</h3>
+    <p style="font-size: 1.05em; line-height: 1.6;">The curveball Cheng threw (76.8 mph, 2483 rpm, at pX=-0.46, pZ=2.16) had a <strong>predicted P(hit|swing) of only ~13%</strong> based on the RF/GBM ensemble. Given that Ohtani swings, the contact-to-hit probability was low — it was not a bad pitch by the numbers.</p>
   </div>
   <div style="flex: 1; min-width: 250px; background: #fefce8; border-left: 5px solid #ca8a04; padding: 20px; border-radius: 8px;">
     <h3 style="color: #ca8a04; margin-top: 0;">Cheng Chose Courage</h3>
@@ -110,7 +110,7 @@ collection: portfolio
 
 <img src="/images/jpn_ohtani_shap.png" alt="SHAP Analysis for Ohtani Hit Model" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
 
-<p style="color: #666; font-size: 0.95em;">SHAP summary (top-left), individual breakdown for the grand slam pitch (top-right), and dependence plots for vertical location and speed (bottom). The grand slam curveball's SHAP breakdown shows a predicted P(hit|swing) of 12.5% — spin rate and being in-zone pushed it slightly higher, but location and vertical break kept it suppressed.</p>
+<p style="color: #666; font-size: 0.95em;">SHAP summary (top-left), individual breakdown for the grand slam pitch (top-right), and dependence plots for vertical location and speed (bottom). The SHAP breakdown for the grand slam curveball shows a predicted P(hit|swing) of 12.5% (RF model alone; the RF/GBM ensemble average is 13.2%). Spin rate and being in-zone pushed it slightly higher, but location and vertical break kept it suppressed.</p>
 
 ### Optimal Pitching Strategy
 
@@ -125,7 +125,7 @@ collection: portfolio
     <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">Fastball</span><br><span style="color: #aaa;">Low & away — P(hit) = 3.6%</span></div>
     <div><span style="font-size: 1.6em; font-weight: bold; color: #fca5a5;">Curveball</span><br><span style="color: #aaa;">Cheng's choice — P(hit) = 4.8%*</span></div>
   </div>
-  <p style="color: #888; font-size: 0.85em; margin-top: 15px;">*Optimal curveball location, vs. the 13.2% at where Cheng actually threw it. A low-and-away fastball or low-inside changeup would have been the statistically safest options.</p>
+  <p style="color: #888; font-size: 0.85em; margin-top: 15px;">*Optimal curveball location. P(hit) = P(swing) × P(hit|swing) accounts for both swing likelihood and contact quality. Cheng's actual curveball had P(hit|swing) = 13.2% but was thrown in a high-swing-probability zone. A low-and-away fastball or low-inside changeup would have been the statistically safest options.</p>
 </div>
 
 ---
@@ -135,12 +135,12 @@ collection: portfolio
 <div style="background: #f8fafc; border: 2px solid #334155; padding: 25px; border-radius: 10px; margin: 20px 0;">
   <ol style="line-height: 2; font-size: 1.05em;">
     <li><strong>Cheng's count control was the real problem</strong> — he repeatedly fell behind batters, loading the bases before Ohtani's at-bat. The meltdown was set up by a pattern, not a single pitch.</li>
-    <li><strong>The grand slam pitch was not a bad pitch</strong> — at 13.2% predicted hit probability, the curveball was a defensible choice. Cheng showed courage competing against Ohtani rather than issuing an intentional walk.</li>
-    <li><strong>There was room for improvement</strong> — the models suggest a low-and-away fastball (3.6% P(hit)) or low-inside changeup (4.1%) would have been statistically safer than the curveball location Cheng chose.</li>
+    <li><strong>The grand slam pitch was not a bad pitch</strong> — at P(hit|swing) = 13.2%, the curveball had low contact danger. Cheng showed courage competing against Ohtani rather than issuing an intentional walk.</li>
+    <li><strong>There was room for improvement</strong> — the models suggest a low-and-away fastball (P(hit) = 3.6%) or low-inside changeup (P(hit) = 4.1%) would have minimized the combined P(swing) × P(hit|swing) danger better than the curveball location Cheng chose.</li>
     <li><strong>The damage continued after Cheng</strong> — Hu and Sha combined for 5 more ER, proving this was a team-wide defensive collapse, not one pitcher's failure.</li>
   </ol>
 </div>
 
 <div style="background: #f8f9fa; border: 1px solid #dee2e6; padding: 20px; border-radius: 8px; margin-top: 25px; font-style: italic; color: #555;">
-  Baseball is a game of probabilities. A 13% hit becomes a grand slam, and a narrative is born. But the data tells a more nuanced story — one of systemic count management issues, a courageous pitching decision, and the cruel randomness that makes this sport beautiful.
+  Baseball is a game of probabilities. A pitch with 13% P(hit|swing) becomes a grand slam, and a narrative is born. But the data tells a more nuanced story — one of systemic count management issues, a courageous pitching decision, and the cruel randomness that makes this sport beautiful.
 </div>
