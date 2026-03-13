@@ -7,7 +7,7 @@ collection: portfolio
 <div style="background: linear-gradient(135deg, #1a0a0a 0%, #4a1a1a 50%, #8b0000 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #ff6b6b; margin-top: 0; font-size: 1.6em;">WBC 2026 Pool C: Taiwan vs. Japan (Mar 9, 2026)</h2>
   <p style="font-size: 1.1em; line-height: 1.7; color: #f5f5f5;">
-    Japan scored <strong style="color: #ff6b6b;">13 runs in the 2nd inning</strong> — the most devastating single-inning collapse in WBC history. Starter <strong>Hao-Chun Cheng</strong> was pulled after 1.2 IP with 8 ER, and the narrative quickly blamed him for the disaster. But was that fair? I used pitch-level data and machine learning models to find out.
+    Japan scored <strong style="color: #ff6b6b;">10 runs in the 2nd inning</strong> — a devastating single-inning collapse. Starter <strong>Hao-Chun Cheng</strong> was pulled after 1.2 IP with 8 ER, and the narrative quickly blamed him for the disaster. But was that fair? I used pitch-level data and machine learning models to find out.
   </p>
 </div>
 
