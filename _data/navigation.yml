@@ -23,6 +23,12 @@ main:
   - title: "CV"
     url: /cv/
 
+  - title: "中文"
+    url: /zh/
+
+  - title: "日本語"
+    url: /ja/
+
 main_zh:
   - title: "關於我"
     url: /zh/
@@ -33,8 +39,20 @@ main_zh:
   - title: "研究"
     url: /zh/research/
 
+  - title: "教學"
+    url: /teaching/
+
+  - title: "部落格"
+    url: /year-archive/
+
   - title: "履歷"
     url: /zh/cv/
+
+  - title: "English"
+    url: /
+
+  - title: "日本語"
+    url: /ja/
 
 main_ja:
   - title: "プロフィール"
@@ -46,5 +64,17 @@ main_ja:
   - title: "研究"
     url: /ja/research/
 
+  - title: "授業"
+    url: /teaching/
+
+  - title: "ブログ"
+    url: /year-archive/
+
   - title: "履歴書"
     url: /ja/cv/
+
+  - title: "English"
+    url: /
+
+  - title: "中文"
+    url: /zh/

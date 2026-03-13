@@ -1,6 +1,6 @@
 ---
 title: "Baseball Analytics: Dissecting the 2nd Inning Meltdown — Taiwan vs. Japan, WBC 2026"
-excerpt: "Was Cheng really to blame for the 13-run disaster? Using pitch-level data, Random Forest, and GBM models trained on Ohtani's 2025 MLB season, we decompose the damage and propose an optimal pitching strategy.<br/>"
+excerpt: "Was Cheng really to blame for the 10-run disaster? Using pitch-level data, Random Forest, and GBM models trained on Ohtani's 2025 MLB season, we decompose the damage and propose an optimal pitching strategy.<br/>"
 collection: portfolio
 ---
 
