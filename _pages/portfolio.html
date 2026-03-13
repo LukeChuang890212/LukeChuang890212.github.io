@@ -7,9 +7,118 @@ author_profile: true
 
 {% include base_path %}
 
-<p>A collection of data analysis projects demonstrating end-to-end analytical workflows — from data cleaning and exploratory analysis to model fitting and interpretation. Methods span linear and logistic regression, classification, model selection, ensemble learning, SVM, PCA, clustering, survival analysis, mixed-effects models, GEE, causal inference, categorical modeling, Poisson regression, nonparametric density and curve estimation, Monte Carlo simulation, MCMC, EM algorithm, numerical optimization, Gaussian processes, and spline regression.</p>
+<p style="font-size: 1.05em; line-height: 1.8; color: #475569; margin-bottom: 30px;">
+  A collection of data analysis projects demonstrating end-to-end analytical workflows — from data cleaning and exploratory analysis to model fitting and interpretation. Methods span linear and logistic regression, classification, model selection, ensemble learning, SVM, PCA, clustering, survival analysis, mixed-effects models, GEE, causal inference, categorical modeling, Poisson regression, nonparametric density and curve estimation, Monte Carlo simulation, MCMC, EM algorithm, numerical optimization, Gaussian processes, and spline regression.
+</p>
 
-{% for post in site.portfolio reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<!-- Baseball Analytics: Taiwan vs. Australia -->
+<div style="background: #ffffff; border: 2px solid #0f3460; border-left: 6px solid #e94560; padding: 20px; border-radius: 10px; margin-bottom: 18px; transition: box-shadow 0.2s;">
+  <a href="{{ base_path }}/portfolio/portfolio-99-baseball/" style="text-decoration: none;">
+    <h3 style="color: #0f3460; margin-top: 0; margin-bottom: 6px;">Baseball Analytics: Umpire Strike Zone Bias in WBC 2026 Taiwan vs. Australia</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Kernel density estimation of the home plate umpire's practical strike zone reveals a striking asymmetry between teams — with Taiwan batters facing a significantly expanded zone.</p>
+</div>
 
+<!-- Baseball Analytics: Taiwan vs. Japan -->
+<div style="background: #ffffff; border: 2px solid #4a1a1a; border-left: 6px solid #ff6b6b; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-98-baseball-jpn/" style="text-decoration: none;">
+    <h3 style="color: #4a1a1a; margin-top: 0; margin-bottom: 6px;">Baseball Analytics: Dissecting the 2nd Inning Meltdown — Taiwan vs. Japan, WBC 2026</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Was Cheng really to blame for the 10-run disaster? Using pitch-level data, Random Forest, and GBM models to decompose the damage and propose an optimal pitching strategy.</p>
+</div>
+
+<!-- Nonparametric Curve Estimation -->
+<div style="background: #ffffff; border: 2px solid #047857; border-left: 6px solid #34d399; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-13-nonparametric/" style="text-decoration: none;">
+    <h3 style="color: #064e3b; margin-top: 0; margin-bottom: 6px;">Nonparametric Curve Estimation: Density Estimation, Kernel Regression, Splines, and Local Methods</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Histogram and kernel density estimation, bandwidth selection, multivariate KDE, local polynomial regression, smoothing splines, penalized regression, cross-validation, and GAMs.</p>
+</div>
+
+<!-- Statistical Computing -->
+<div style="background: #ffffff; border: 2px solid #7c3aed; border-left: 6px solid #a78bfa; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-12-statistical-computing/" style="text-decoration: none;">
+    <h3 style="color: #3b0764; margin-top: 0; margin-bottom: 6px;">Statistical Computing: Simulation, Monte Carlo, MCMC, Optimization, EM Algorithm, and Gaussian Processes</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Random variate generation, Monte Carlo integration, MCMC sampling, bootstrap and permutation tests, Newton-Raphson optimization, EM algorithm, GP regression, and Bayesian optimization.</p>
+</div>
+
+<!-- Linear Models -->
+<div style="background: #ffffff; border: 2px solid #2563eb; border-left: 6px solid #60a5fa; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-11-linear-model/" style="text-decoration: none;">
+    <h3 style="color: #1e3a5f; margin-top: 0; margin-bottom: 6px;">Linear Models: Regression Theory, Diagnostics, Weighted Least Squares, and Time Series Modeling</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">EDA, model fitting and selection, hypothesis testing, diagnostics, confidence regions, WLS, GLS with AR(1), polynomial regression, splines, and changepoint models.</p>
+</div>
+
+<!-- Categorical Data Analysis -->
+<div style="background: #ffffff; border: 2px solid #0d9488; border-left: 6px solid #2dd4bf; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-10-categorical/" style="text-decoration: none;">
+    <h3 style="color: #134e4a; margin-top: 0; margin-bottom: 6px;">Categorical Data Analysis: GLMs, Logistic Regression, Poisson Models, and Correspondence Analysis</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Linear regression diagnostics, logistic regression for disease risk, Poisson regression with overdispersion, log-linear models, correspondence analysis, and symmetry testing.</p>
+</div>
+
+<!-- Causal Inference -->
+<div style="background: #ffffff; border: 2px solid #312e81; border-left: 6px solid #4f46e5; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-9-causal-inference/" style="text-decoration: none;">
+    <h3 style="color: #1e1b4b; margin-top: 0; margin-bottom: 6px;">Causal Inference and Biological Data Analysis: DAGs, GLMs, Mixed-Effects Models, and Treatment Effect Estimation</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">DAG-based causal reasoning, Poisson GLM with offset, logistic regression with ROC/calibration, mixed-effects models, GEE, meta-analysis, IPTW, and doubly robust estimation.</p>
+</div>
+
+<!-- Survival Analysis -->
+<div style="background: #ffffff; border: 2px solid #b91c1c; border-left: 6px solid #ef4444; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-7-survival-analysis/" style="text-decoration: none;">
+    <h3 style="color: #7f1d1d; margin-top: 0; margin-bottom: 6px;">Survival Analysis: Nonparametric Estimation and Censored Data Modeling</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Kaplan-Meier estimation, hazard functions, log-rank tests, and Cox proportional hazards models applied to clinical and reliability data.</p>
+</div>
+
+<!-- Cost of Living Final Project -->
+<div style="background: #ffffff; border: 2px solid #b45309; border-left: 6px solid #f59e0b; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-6-final-project/" style="text-decoration: none;">
+    <h3 style="color: #78350f; margin-top: 0; margin-bottom: 6px;">Cost of Living Analysis: Global City Comparison via Multivariate Methods</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">PCA, factor analysis, and clustering applied to global cost-of-living data across 55 expenditure categories to identify city groupings and spending patterns.</p>
+</div>
+
+<!-- SVM & Unsupervised Learning -->
+<div style="background: #ffffff; border: 2px solid #6d28d9; border-left: 6px solid #8b5cf6; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-5-svm-unsupervised/" style="text-decoration: none;">
+    <h3 style="color: #4c1d95; margin-top: 0; margin-bottom: 6px;">SVM & Unsupervised Learning: High-Dimensional Image Classification</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Support vector machines with PCA-based dimensionality reduction, t-SNE visualization, and clustering for casting defect detection.</p>
+</div>
+
+<!-- Tree-Based & Ensemble Methods -->
+<div style="background: #ffffff; border: 2px solid #065f46; border-left: 6px solid #059669; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-4-tree-ensemble/" style="text-decoration: none;">
+    <h3 style="color: #1a4731; margin-top: 0; margin-bottom: 6px;">Tree-Based & Ensemble Methods: Bike Sharing and Airline Satisfaction</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Decision trees, random forests, gradient boosting, and nonlinear regression for demand prediction and customer satisfaction classification.</p>
+</div>
+
+<!-- Model Selection -->
+<div style="background: #ffffff; border: 2px solid #1e3a8a; border-left: 6px solid #3b82f6; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-3-model-selection/" style="text-decoration: none;">
+    <h3 style="color: #0a2463; margin-top: 0; margin-bottom: 6px;">Model Selection & Regularization: Chemical Manufacturing Yield Prediction</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Systematic comparison of subset selection, PCR, Lasso, and Ridge regression on high-dimensional manufacturing data.</p>
+</div>
+
+<!-- Classification Methods -->
+<div style="background: #ffffff; border: 2px solid #893168; border-left: 6px solid #c94b8c; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-2-classification/" style="text-decoration: none;">
+    <h3 style="color: #4a1942; margin-top: 0; margin-bottom: 6px;">Classification Methods: Breast Cancer Diagnosis</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Comprehensive comparison of logistic regression, discriminant analysis, and KNN for tumor diagnosis.</p>
+</div>
+
+<!-- Regression Modeling -->
+<div style="background: #ffffff; border: 2px solid #1a7a5a; border-left: 6px solid #2d8f4e; padding: 20px; border-radius: 10px; margin-bottom: 18px;">
+  <a href="{{ base_path }}/portfolio/portfolio-1-regression/" style="text-decoration: none;">
+    <h3 style="color: #0d4f4f; margin-top: 0; margin-bottom: 6px;">Regression Modeling: Ozone Prediction & Prostate Cancer Analysis</h3>
+  </a>
+  <p style="margin: 0; color: #666; font-size: 0.95em;">Multiple regression analysis with model diagnostics, variable selection, and scientific interpretation on environmental and biomedical data.</p>
+</div>
