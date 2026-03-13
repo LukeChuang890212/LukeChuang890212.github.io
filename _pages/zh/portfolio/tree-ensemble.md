@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 ---
 
-<div style="text-align: right; margin-bottom: 15px;"><a href="/portfolio/">English</a> | <strong>中文</strong> | <a href="/ja/portfolio/">日本語</a></div>
 
 <div style="background: linear-gradient(135deg, #1a4731 0%, #065f46 50%, #059669 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #6ee7b7; margin-top: 0; font-size: 1.6em;">當一棵樹不夠時——集成方法登場</h2>

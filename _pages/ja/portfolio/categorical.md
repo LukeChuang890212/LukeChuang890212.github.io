@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 ---
 
-<div style="text-align: right; margin-bottom: 15px;"><a href="/portfolio/">English</a> | <a href="/zh/portfolio/">中文</a> | <strong>日本語</strong></div>
 
 <div style="background: linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #2dd4bf 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #99f6e4; margin-top: 0; font-size: 1.6em;">カウント、カテゴリ、分割表</h2>

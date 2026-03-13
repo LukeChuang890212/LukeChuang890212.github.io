@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 ---
 
-<div style="text-align: right; margin-bottom: 15px;"><a href="/portfolio/">English</a> | <a href="/zh/portfolio/">中文</a> | <strong>日本語</strong></div>
 
 <div style="background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 50%, #ef4444 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #fecaca; margin-top: 0; font-size: 1.6em;">不完全な観測によるイベント発生時間のモデリング</h2>

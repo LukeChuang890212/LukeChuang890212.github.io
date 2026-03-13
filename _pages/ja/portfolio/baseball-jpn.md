@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 ---
 
-<div style="text-align: right; margin-bottom: 15px;"><a href="/portfolio/">English</a> | <a href="/zh/portfolio/">中文</a> | <strong>日本語</strong></div>
 
 <div style="background: linear-gradient(135deg, #1a0a0a 0%, #4a1a1a 50%, #8b0000 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #ff6b6b; margin-top: 0; font-size: 1.6em;">2026 WBC プールC：台湾 vs. 日本（2026年3月9日）</h2>

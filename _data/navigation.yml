@@ -23,8 +23,28 @@ main:
   - title: "CV"
     url: /cv/
 
-  - title: "中文"
+main_zh:
+  - title: "關於我"
     url: /zh/
 
-  - title: "日本語"
+  - title: "作品集"
+    url: /zh/portfolio/
+
+  - title: "研究"
+    url: /zh/research/
+
+  - title: "履歷"
+    url: /zh/cv/
+
+main_ja:
+  - title: "プロフィール"
     url: /ja/
+
+  - title: "ポートフォリオ"
+    url: /ja/portfolio/
+
+  - title: "研究"
+    url: /ja/research/
+
+  - title: "履歴書"
+    url: /ja/cv/

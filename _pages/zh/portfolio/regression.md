@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 ---
 
-<div style="text-align: right; margin-bottom: 15px;"><a href="/portfolio/">English</a> | <strong>中文</strong> | <a href="/ja/portfolio/">日本語</a></div>
 
 <div style="background: linear-gradient(135deg, #0d4f4f 0%, #1a7a5a 50%, #2d8f4e 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #7fecb3; margin-top: 0; font-size: 1.6em;">從原始數據到預測模型</h2>

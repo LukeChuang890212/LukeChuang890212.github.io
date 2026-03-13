@@ -5,7 +5,6 @@ author_profile: true
 permalink: /zh/portfolio/final-project/
 ---
 
-<div style="text-align: right; margin-bottom: 15px;"><a href="/portfolio/">English</a> | <strong>中文</strong> | <a href="/ja/portfolio/">日本語</a></div>
 
 <div style="background: linear-gradient(135deg, #78350f 0%, #b45309 50%, #f59e0b 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #fef3c7; margin-top: 0; font-size: 1.6em;">是什麼讓一座城市昂貴？數據驅動的答案</h2>

@@ -7,7 +7,15 @@
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
+          {% assign current_url = page.url %}
+          {% if current_url contains '/zh/' %}
+            {% assign nav_links = site.data.navigation.main_zh %}
+          {% elsif current_url contains '/ja/' %}
+            {% assign nav_links = site.data.navigation.main_ja %}
+          {% else %}
+            {% assign nav_links = site.data.navigation.main %}
+          {% endif %}
+          {% for link in nav_links %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
               {% else %}
@@ -15,6 +23,15 @@
             {% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
+          <li class="masthead__menu-item" style="margin-left: auto; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 12px;">
+            {% if current_url contains '/zh/' %}
+              <a href="/" style="font-size: 0.85em;">EN</a> | <strong style="font-size: 0.85em; color: #f0f0f0;">中</strong> | <a href="/ja/" style="font-size: 0.85em;">日</a>
+            {% elsif current_url contains '/ja/' %}
+              <a href="/" style="font-size: 0.85em;">EN</a> | <a href="/zh/" style="font-size: 0.85em;">中</a> | <strong style="font-size: 0.85em; color: #f0f0f0;">日</strong>
+            {% else %}
+              <strong style="font-size: 0.85em; color: #f0f0f0;">EN</strong> | <a href="/zh/" style="font-size: 0.85em;">中</a> | <a href="/ja/" style="font-size: 0.85em;">日</a>
+            {% endif %}
+          </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>

@@ -5,7 +5,6 @@ author_profile: true
 permalink: /zh/portfolio/survival-analysis/
 ---
 
-<div style="text-align: right; margin-bottom: 15px;"><a href="/portfolio/">English</a> | <strong>中文</strong> | <a href="/ja/portfolio/">日本語</a></div>
 
 <div style="background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 50%, #ef4444 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #fecaca; margin-top: 0; font-size: 1.6em;">在不完整觀測下建模事件發生時間</h2>
