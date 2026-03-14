@@ -85,11 +85,23 @@ collection: portfolio
   </div>
 </div>
 
-### Ohtani's Hit Zones (2025 MLB Season)
+### Ohtani's Swing Tendency: P(swing) (2025 MLB Season)
+
+<img src="/images/jpn_ohtani_swing_heatmap.png" alt="Ohtani Swing Heatmap 2025" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
+
+<p style="color: #666; font-size: 0.95em;">P(swing) per zone bin from Ohtani's 2025 season (2,831 pitches, 1,271 swings = 44.9% overall). Top-left: overall swing rate. Top-right/bottom: breakdown by Fastball, Breaking, and Offspeed. The red star marks Cheng's grand slam curveball location. Ohtani swings aggressively at pitches in the heart of the zone (~80%+), especially on breaking balls over the inner half.</p>
+
+### Ohtani's Contact Quality: P(hit|swing) (2025 MLB Season)
 
 <img src="/images/jpn_ohtani_hit_heatmap.png" alt="Ohtani Hit Heatmap 2025" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
 
-<p style="color: #666; font-size: 0.95em;">Ohtani's 2025 hitting profile: KDE of hit density (top-left), P(hit) per zone bin (top-right), P(hit|swing) per zone bin (bottom-left), and single vs. extra-base hit locations (bottom-right). The red star marks Cheng's grand slam curveball location. Note: P(hit) and P(hit|swing) have different spatial patterns — high P(hit) zones reflect both swing tendency and contact quality, while P(hit|swing) isolates pure contact danger.</p></invoke>
+<p style="color: #666; font-size: 0.95em;">Ohtani's 2025 hitting profile: KDE of hit density (top-left), P(hit) per zone bin (top-right), P(hit|swing) per zone bin (bottom-left), and single vs. extra-base hit locations (bottom-right). The red star marks Cheng's grand slam curveball location. Note: P(hit) and P(hit|swing) have different spatial patterns — high P(hit) zones reflect both swing tendency and contact quality, while P(hit|swing) isolates pure contact danger.</p>
+
+### P(hit|swing) by Pitch Type
+
+<img src="/images/jpn_ohtani_hit_heatmap_by_type.png" alt="Ohtani P(hit|swing) by Pitch Type 2025" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
+
+<p style="color: #666; font-size: 0.95em;">P(hit|swing) per zone bin, broken down by pitch type. Fastball: 640 swings, 89 hits (13.9%). Breaking: 425 swings, 53 hits (12.5%). Offspeed: 206 swings, 27 hits (13.1%). The red star marks Cheng's grand slam curveball (Breaking category). On breaking balls, Ohtani's danger zones concentrate in the middle-in region — precisely where Cheng's curveball landed.</p>
 
 ### The Grand Slam Pitch: Model Verdict
 
@@ -112,11 +124,11 @@ collection: portfolio
 
 <p style="color: #666; font-size: 0.95em;">SHAP summary (top-left), individual breakdown for the grand slam pitch (top-right), and dependence plots for vertical location and speed (bottom). The SHAP breakdown for the grand slam curveball shows a predicted P(hit|swing) of 12.5% (RF model alone; the RF/GBM ensemble average is 13.2%). Spin rate and being in-zone pushed it slightly higher, but location and vertical break kept it suppressed.</p>
 
-### Optimal Pitching Strategy
+### Optimal Pitching Strategy: Decomposing P(hit)
 
-<img src="/images/jpn_ohtani_pitch_strategy.png" alt="Optimal Pitch Location Strategy" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
+<img src="/images/jpn_ohtani_pitch_strategy_decomp.png" alt="Pitch Strategy Decomposition: P(swing), P(hit|swing), P(hit)" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
 
-<p style="color: #666; font-size: 0.95em;"><strong>P(hit) = P(swing) x P(hit|swing)</strong> — the ensemble average of GBM and RF, constrained to the strike zone. The blue dot marks the optimal (lowest P(hit)) location for each pitch type; the red X marks where Cheng actually threw the grand slam curveball. For each pitch type, there existed locations with even lower predicted hit probability.</p>
+<p style="color: #666; font-size: 0.95em;"><strong>P(hit) = P(swing) × P(hit|swing)</strong> — the full decomposition by pitch type (FF = Four-seam Fastball, CU = Curveball, CH = Changeup, SL = Slider). Left column: P(swing) shows where Ohtani is likely to offer. Middle column: P(hit|swing) shows where contact is most dangerous. Right column: P(hit) combines both — the true danger metric. The white square marks the grand slam curveball location; the blue dot marks the optimal (lowest P(hit)) location. This decomposition reveals that some zones have high P(hit|swing) but low P(swing) (e.g., low-outside), making them strategically safe despite contact danger.</p>
 
 <div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 25px 0; text-align: center;">
   <p style="color: #93c5fd; font-size: 1.3em; font-weight: bold; margin: 0;">Model Recommendation</p>
