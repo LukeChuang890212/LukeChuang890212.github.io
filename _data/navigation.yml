@@ -40,7 +40,7 @@ main_zh:
     url: /zh/research/
 
   - title: "教學"
-    url: /teaching/
+    url: /zh/teaching/
 
   - title: "部落格"
     url: /year-archive/
@@ -65,7 +65,7 @@ main_ja:
     url: /ja/research/
 
   - title: "授業"
-    url: /teaching/
+    url: /ja/teaching/
 
   - title: "ブログ"
     url: /year-archive/
