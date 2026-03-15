@@ -41,7 +41,7 @@ redirect_from:
   <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">Manuscript in preparation</span>
 </div>
 
-## Academic Journey
+## Life Journey
 
 <div style="position: relative; margin: 25px 0; padding-left: 30px; border-left: 3px solid #2563eb;">
   <div style="margin-bottom: 25px; position: relative;">
@@ -54,8 +54,15 @@ redirect_from:
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">
-      <strong style="color: #15803d; font-size: 1.05em;">Research Assistant — NTHU, Institute of Statistics and Data Science</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">Nov. 2025 - June 2026 &nbsp;|&nbsp; Advisor: Prof. Yu-Jen Cheng</p>
+      <strong style="color: #15803d; font-size: 1.05em;">Research & Self-Discovery</strong>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">Nov. 2025 - June 2026 &nbsp;|&nbsp; Research at NTHU with Prof. Yu-Jen Cheng</p>
+    </div>
+  </div>
+  <div style="margin-bottom: 25px; position: relative;">
+    <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
+    <div style="background: #ecfdf5; border: 2px solid #14b8a6; padding: 15px; border-radius: 8px;">
+      <strong style="color: #0f766e; font-size: 1.05em;">Military Service</strong>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">July 2025 - Nov. 2025 &nbsp;|&nbsp; A time for reflection — lots of reading (Yuval Noah Harari), gym, and baseball training</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">

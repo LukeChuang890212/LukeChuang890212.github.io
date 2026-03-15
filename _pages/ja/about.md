@@ -38,7 +38,7 @@ author_profile: true
   <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">論文執筆中</span>
 </div>
 
-## 学歴・経歴
+## これまでの歩み
 
 <div style="position: relative; margin: 25px 0; padding-left: 30px; border-left: 3px solid #2563eb;">
   <div style="margin-bottom: 25px; position: relative;">
@@ -51,8 +51,15 @@ author_profile: true
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">
-      <strong style="color: #15803d; font-size: 1.05em;">リサーチアシスタント — 国立清華大学 統計学研究所</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025年11月 - 2026年6月 &nbsp;|&nbsp; 指導教員：鄭又仁教授</p>
+      <strong style="color: #15803d; font-size: 1.05em;">研究と自己探求</strong>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025年11月 - 2026年6月 &nbsp;|&nbsp; 清華大学にて鄭又仁教授と共同研究</p>
+    </div>
+  </div>
+  <div style="margin-bottom: 25px; position: relative;">
+    <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
+    <div style="background: #ecfdf5; border: 2px solid #14b8a6; padding: 15px; border-radius: 8px;">
+      <strong style="color: #0f766e; font-size: 1.05em;">兵役</strong>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025年7月 - 11月 &nbsp;|&nbsp; 内省の時間——読書（Yuval Noah Harari）、筋トレ、野球の練習に打ち込む日々</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">

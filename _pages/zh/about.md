@@ -38,21 +38,28 @@ author_profile: true
   <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">論文撰寫中</span>
 </div>
 
-## 學術歷程
+## 人生旅途
 
 <div style="position: relative; margin: 25px 0; padding-left: 30px; border-left: 3px solid #2563eb;">
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px;">
       <strong style="color: #92400e; font-size: 1.05em;">統計學博士 — University of Michigan, Ann Arbor</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2026 年秋季（即將入學）</p>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2026 年秋季入學</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">
-      <strong style="color: #15803d; font-size: 1.05em;">研究助理 — 國立清華大學統計學研究所</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025 年 11 月 - 2026 年 6 月 &nbsp;|&nbsp; 指導教授：鄭又仁</p>
+      <strong style="color: #15803d; font-size: 1.05em;">研究與自我探索</strong>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025 年 11 月 - 2026 年 6 月 &nbsp;|&nbsp; 在清大與鄭又仁教授合作研究</p>
+    </div>
+  </div>
+  <div style="margin-bottom: 25px; position: relative;">
+    <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
+    <div style="background: #ecfdf5; border: 2px solid #14b8a6; padding: 15px; border-radius: 8px;">
+      <strong style="color: #0f766e; font-size: 1.05em;">兵役</strong>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025 年 7 月 - 11 月 &nbsp;|&nbsp; 沉澱與反思的時光——大量閱讀（Yuval Noah Harari）、健身、棒球訓練</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">
