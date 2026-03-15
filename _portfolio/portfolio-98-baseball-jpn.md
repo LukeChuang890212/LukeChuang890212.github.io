@@ -152,13 +152,13 @@ collection: portfolio
 <p style="color: #666; font-size: 0.95em;">GBM & RF ensemble average, conditioned on <strong>Cheng's average pitch profile</strong> for each pitch type on a 2-1 count. Each row is one of Cheng's four pitches (Four-Seam Fastball, Curveball, Changeup, Slider). <strong>Left: P(swing | Cheng's profile, loc)</strong> — where Ohtani would offer against Cheng's pitches. <strong>Middle: P(hit | swing, Cheng's profile, loc)</strong> — where contact is most dangerous. <strong>Right: P(hit | Cheng's profile, loc)</strong> — the combined danger metric. The white square marks where Cheng actually threw the grand slam curveball; the blue square marks the optimal (lowest P(hit)) location for each pitch type. Key insight: some zones have high P(hit | swing) but low P(swing) (e.g., low-outside), making them strategically safe despite contact danger.</p>
 
 <div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 25px 0; text-align: center;">
-  <p style="color: #93c5fd; font-size: 1.3em; font-weight: bold; margin: 0;">Model Recommendation</p>
+  <p style="color: #93c5fd; font-size: 1.3em; font-weight: bold; margin: 0;">Model Recommendation (Blue Square = Optimal Location)</p>
   <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
-    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">Changeup</span><br><span style="color: #aaa;">Low & inside — P(hit) = 4.1%</span></div>
     <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">Fastball</span><br><span style="color: #aaa;">Low & away — P(hit) = 3.6%</span></div>
-    <div><span style="font-size: 1.6em; font-weight: bold; color: #fca5a5;">Curveball</span><br><span style="color: #aaa;">Cheng's choice — P(hit) = 4.8%*</span></div>
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">Changeup</span><br><span style="color: #aaa;">Low & inside — P(hit) = 4.1%</span></div>
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">Curveball</span><br><span style="color: #aaa;">Optimal spot — P(hit) = 4.8%</span></div>
   </div>
-  <p style="color: #888; font-size: 0.85em; margin-top: 15px;">*Optimal curveball location at Cheng's average curveball profile. Cheng's actual curveball had P(hit) ≈ 9% — already low, but a better-located curveball could reach 4.8%. A low-and-away fastball (3.6%) or low-inside changeup (4.1%) with Cheng's typical profiles would have been the statistically safest options.</p>
+  <p style="color: #888; font-size: 0.85em; margin-top: 15px;">White square = where Cheng actually threw (P(hit) ≈ 9%). Blue square = optimal location for each pitch type. All values conditioned on Cheng's average pitch profile. Even a curveball at the optimal spot (4.8%) would have been riskier than a low-and-away fastball (3.6%) or low-inside changeup (4.1%).</p>
 </div>
 
 ---
@@ -168,8 +168,8 @@ collection: portfolio
 <div style="background: #f8fafc; border: 2px solid #334155; padding: 25px; border-radius: 10px; margin: 20px 0;">
   <ol style="line-height: 2; font-size: 1.05em;">
     <li><strong>Cheng's count control was the real problem</strong> — he repeatedly fell behind batters, loading the bases before Ohtani's at-bat. The meltdown was set up by a pattern, not a single pitch.</li>
-    <li><strong>The grand slam pitch was not a bad pitch</strong> — with P(swing) ≈ 71%, P(hit|swing) ≈ 13%, and P(hit) ≈ 9%, the curveball had low overall danger. Its high spin rate (2,483 rpm), strong vertical break (−7.09 in.), and speed differential all suppressed hit probability. Cheng showed courage competing against Ohtani rather than issuing an intentional walk.</li>
-    <li><strong>There was room for improvement</strong> — conditioned on Cheng's own pitch profiles, the models suggest a low-and-away fastball (P(hit) = 3.6%) or low-inside changeup (P(hit) = 4.1%) would have been safer than the curveball location he chose (9% actual vs. 4.8% at the optimal curveball spot).</li>
+    <li><strong>The grand slam pitch was not a bad pitch</strong> — the RF/GBM models give P(swing) ≈ 71%, P(hit|swing) ≈ 13%, and P(hit) ≈ 9%. The curveball's high spin rate (2,483 rpm), strong vertical break (−7.09 in.), and 20+ mph speed differential all suppressed hit probability well below Ohtani's average. Cheng showed courage competing head-on rather than issuing an intentional walk.</li>
+    <li><strong>There was room for improvement</strong> — conditioned on Cheng's own pitch profiles, the optimal curveball location (blue square) would have reduced P(hit) from 9% to 4.8%. But a low-and-away fastball (3.6%) or low-inside changeup (4.1%) would have been even safer choices.</li>
     <li><strong>The damage continued after Cheng</strong> — Hu and Sha combined for 5 more ER, proving this was a team-wide defensive collapse, not one pitcher's failure.</li>
   </ol>
 </div>
