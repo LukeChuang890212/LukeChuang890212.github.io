@@ -35,7 +35,7 @@ author_profile: true
   <p style="color: #475569; line-height: 1.7;">
     鄭又仁教授と共同で、複数の propensity score モデルと<strong>一般化モーメント法</strong>を融合した新しい<strong>アンサンブル手法</strong>の開発に取り組んでいます。モデルの誤特定がある場合にも頑健に機能する multiply robust な逆確率重み付け推定量を構築し、<strong>Missing Not at Random（MNAR）</strong>データへの適用を目指しています。
   </p>
-  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">論文執筆中</span>
+  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">Statistics in Medicine に査読中</span>
 </div>
 
 ## これまでの歩み
@@ -52,14 +52,14 @@ author_profile: true
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">
       <strong style="color: #15803d; font-size: 1.05em;">研究と自己探求</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025年11月 - 2026年6月 &nbsp;|&nbsp; 清華大学にて鄭又仁教授と共同研究</p>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025年11月 - 2026年6月 &nbsp;|&nbsp; 清華大学にて鄭又仁教授と共同研究 · 論文を修正し <em>Statistics in Medicine</em> に再投稿（2026年3月）</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #ecfdf5; border: 2px solid #14b8a6; padding: 15px; border-radius: 8px;">
       <strong style="color: #0f766e; font-size: 1.05em;">兵役</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025年7月 - 11月 &nbsp;|&nbsp; 内省の時間——読書（Yuval Noah Harari）、筋トレ、野球の練習に打ち込む日々</p>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025年7月 - 11月 &nbsp;|&nbsp; 内省の時間——読書（Yuval Noah Harari）、筋トレ、野球の練習、そして <em>Biometrics</em> からのリジェクトで学んだ粘り強さ</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">

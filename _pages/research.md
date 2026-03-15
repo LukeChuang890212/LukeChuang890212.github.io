@@ -37,7 +37,7 @@ author_profile: true
   <p style="color: #475569; line-height: 1.7; margin-bottom: 10px;">
     Proposed a novel ensemble method for missing not at random data, combining multiple propensity score models with generalized methods of moments to create multiply robust inverse probability weighting estimators. Demonstrated its effectiveness under mild misspecification scenarios through simulation studies and real-world application to mental health data.
   </p>
-  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">Paper in progress</span>
+  <span style="display: inline-block; background: #fef3c7; color: #92400e; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">Under review at Statistics in Medicine</span>
 </div>
 
 ## Undergraduate Research

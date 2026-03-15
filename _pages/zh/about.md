@@ -35,7 +35,7 @@ author_profile: true
   <p style="color: #475569; line-height: 1.7;">
     與鄭又仁教授合作，發展一套新穎的 <strong>ensemble methods</strong>，透過結合多個 propensity score 模型與 <strong>generalized methods of moments</strong>，建構具備 multiply robust 性質的 inverse probability weighting 估計量，以應對模型設定錯誤情境下的 <strong>missing not at random（MNAR）</strong>資料問題。
   </p>
-  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">論文撰寫中</span>
+  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">審查中（Statistics in Medicine）</span>
 </div>
 
 ## 人生旅途
@@ -52,14 +52,14 @@ author_profile: true
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">
       <strong style="color: #15803d; font-size: 1.05em;">研究與自我探索</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025 年 11 月 - 2026 年 6 月 &nbsp;|&nbsp; 在清大與鄭又仁教授合作研究</p>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025 年 11 月 - 2026 年 6 月 &nbsp;|&nbsp; 在清大與鄭又仁教授合作研究 · 修改後重新投稿至 <em>Statistics in Medicine</em>（2026 年 3 月）</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #ecfdf5; border: 2px solid #14b8a6; padding: 15px; border-radius: 8px;">
       <strong style="color: #0f766e; font-size: 1.05em;">兵役</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025 年 7 月 - 11 月 &nbsp;|&nbsp; 沉澱與反思的時光——大量閱讀（Yuval Noah Harari）、健身、棒球訓練</p>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2025 年 7 月 - 11 月 &nbsp;|&nbsp; 沉澱與反思的時光——閱讀（Yuval Noah Harari）、健身、棒球訓練，以及一次被 <em>Biometrics</em> 退稿後學到的韌性</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">

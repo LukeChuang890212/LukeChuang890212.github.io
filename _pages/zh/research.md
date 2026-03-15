@@ -37,7 +37,7 @@ author_profile: true
   <p style="color: #475569; line-height: 1.7; margin-bottom: 10px;">
     提出一套新穎的 ensemble method，針對 missing not at random 資料，結合多個 propensity score 模型與 generalized methods of moments，建構具備 multiply robust 性質的 inverse probability weighting 估計量。透過模擬研究及實際心理健康資料的應用，驗證此方法在模型存在輕度設定錯誤時仍能維持良好的估計表現。
   </p>
-  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">論文撰寫中</span>
+  <span style="display: inline-block; background: #fef3c7; color: #92400e; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">審查中（Statistics in Medicine）</span>
 </div>
 
 ## 大學部研究

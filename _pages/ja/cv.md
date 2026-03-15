@@ -49,7 +49,7 @@ author_profile: true
   <p style="color: #475569; line-height: 1.7; margin-bottom: 0;">
     Ensemble-Based Multiply Robust Methods for Missing Not at Random Data with Model Misspecification
   </p>
-  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-top: 8px;">論文執筆中</span>
+  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-top: 8px;">Statistics in Medicine に査読中</span>
 </div>
 
 ## スキル

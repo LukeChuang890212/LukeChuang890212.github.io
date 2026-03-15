@@ -37,7 +37,7 @@ author_profile: true
   <p style="color: #475569; line-height: 1.7; margin-bottom: 10px;">
     Missing Not at Random データに対する新たなアンサンブル手法を提案した。複数の propensity score モデルと一般化モーメント法を組み合わせることで、multiply robust な逆確率重み付け推定量を構築し、軽度のモデル誤特定が存在するシナリオにおいてもその有効性をシミュレーション研究およびメンタルヘルスデータへの実データ適用を通じて実証した。
   </p>
-  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">論文執筆中</span>
+  <span style="display: inline-block; background: #fef3c7; color: #92400e; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">Statistics in Medicine に査読中</span>
 </div>
 
 ## 学部での研究

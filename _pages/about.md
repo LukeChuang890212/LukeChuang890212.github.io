@@ -38,7 +38,7 @@ redirect_from:
   <p style="color: #475569; line-height: 1.7;">
     Working with Professor Yu-Jen Cheng on novel <strong>ensemble methods</strong> that combine multiple propensity score models with <strong>generalized methods of moments</strong> to create multiply robust inverse probability weighting estimators — designed to handle <strong>missing not at random (MNAR)</strong> data under model misspecification.
   </p>
-  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">Manuscript in preparation</span>
+  <span style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">Under review at Statistics in Medicine</span>
 </div>
 
 ## Life Journey
@@ -55,14 +55,14 @@ redirect_from:
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">
       <strong style="color: #15803d; font-size: 1.05em;">Research & Self-Discovery</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">Nov. 2025 - June 2026 &nbsp;|&nbsp; Research at NTHU with Prof. Yu-Jen Cheng</p>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">Nov. 2025 - June 2026 &nbsp;|&nbsp; Research at NTHU with Prof. Yu-Jen Cheng · Revised and resubmitted manuscript to <em>Statistics in Medicine</em> (Mar. 2026)</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #ecfdf5; border: 2px solid #14b8a6; padding: 15px; border-radius: 8px;">
       <strong style="color: #0f766e; font-size: 1.05em;">Military Service</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">July 2025 - Nov. 2025 &nbsp;|&nbsp; A time for reflection — lots of reading (Yuval Noah Harari), gym, and baseball training</p>
+      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">July 2025 - Nov. 2025 &nbsp;|&nbsp; A time for reflection — reading (Yuval Noah Harari), gym, baseball training, and a manuscript rejection from <em>Biometrics</em> that taught me resilience</p>
     </div>
   </div>
   <div style="margin-bottom: 25px; position: relative;">
