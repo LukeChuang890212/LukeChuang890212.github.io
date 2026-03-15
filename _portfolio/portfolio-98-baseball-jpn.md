@@ -143,12 +143,6 @@ collection: portfolio
   </div>
 </div>
 
-### What Drives Ohtani's Hit Probability?
-
-<img src="/images/jpn_ohtani_shap.png" alt="SHAP Analysis for Ohtani Hit Model" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
-
-<p style="color: #666; font-size: 0.95em;">SHAP summary (top-left), individual breakdown for the grand slam pitch (top-right), and dependence plots for vertical location and speed (bottom). The SHAP breakdown for the grand slam curveball shows P(hit|swing) = 12.5% (GBM). The dominant protective factor was spin rate (2,483 rpm), which alone contributed the largest negative SHAP value. Being in-zone pushed P(hit|swing) slightly higher, but spin, vertical break, and speed differential kept it well below Ohtani's average.</p>
-
 ### Optimal Pitching Strategy: Decomposing P(hit)
 
 <img src="/images/jpn_ohtani_pitch_strategy_decomp.png" alt="Pitch Strategy Decomposition: P(swing), P(hit|swing), P(hit)" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
