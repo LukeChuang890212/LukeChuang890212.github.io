@@ -89,16 +89,16 @@ collection: portfolio
 
 <img src="/images/jpn_ohtani_kde_heatmap.png" alt="Ohtani KDE Heatmaps — P(swing), P(hit|swing), P(hit) by Pitch Type" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
 
-<p style="color: #666; font-size: 0.95em;">Kernel-smoothed rate estimates from Ohtani's 2025 MLB season. Each row is a pitch category (Overall, Fastball, Breaking, Offspeed); each column is a probability component. <strong>Left: P(swing)</strong> — where Ohtani offers. <strong>Middle: P(hit|swing)</strong> — where contact is dangerous. <strong>Right: P(hit) = P(swing) × P(hit|swing)</strong> — the combined danger. The red star marks Cheng's grand slam curveball (pX=−0.46, pZ=2.16).</p>
+<p style="color: #666; font-size: 0.95em;">Kernel-smoothed rate estimates based on Ohtani's 2025 MLB batting data, conditioned on <em>location only</em>. Each row is a pitch category (Overall, Fastball, Breaking, Offspeed); each column is a probability component. <strong>Left: P(swing | loc)</strong> — where Ohtani offers. <strong>Middle: P(hit | swing, loc)</strong> — where contact is dangerous given a swing. <strong>Right: P(hit | loc)</strong> — the combined danger at each location. The red star marks Cheng's grand slam curveball (pX=−0.46, pZ=2.16).</p>
 
 <div style="background: #eff6ff; border: 2px solid #2563eb; padding: 20px; border-radius: 10px; margin: 20px 0;">
   <h4 style="color: #1e3a5f; margin-top: 0;">What the KDE tells us about Cheng's curveball location</h4>
-  <p style="line-height: 1.7;">Looking at the <strong>Breaking ball row</strong> (3rd row), the grand slam curveball landed in a zone with <strong>moderate P(swing)</strong> and <strong>relatively low P(hit|swing)</strong>. The combined P(hit) at this location is not in a hot zone — Cheng placed the pitch in a reasonable location. The high-danger zones for breaking balls concentrate in the middle-inside region and up in the zone; Cheng's curveball was slightly away from these.</p>
+  <p style="line-height: 1.7;">Looking at the <strong>Breaking ball row</strong> (3rd row), the grand slam curveball landed in a zone with <strong>moderate P(swing | loc)</strong> and <strong>relatively low P(hit | swing, loc)</strong>. The combined P(hit | loc) at this location is not in a hot zone — Cheng placed the pitch in a reasonable location. The high-danger zones for breaking balls concentrate in the middle-inside region and up in the zone; Cheng's curveball was slightly away from these.</p>
 </div>
 
 ### The Grand Slam Pitch: Model Verdict
 
-<p style="color: #666; font-size: 0.95em; margin-bottom: 5px;">The KDE heatmaps above show location-only patterns. To evaluate the <em>specific</em> grand slam pitch, we feed its full profile — location, speed, spin rate, movement, and count — into the RF and GBM models:</p>
+<p style="color: #666; font-size: 0.95em; margin-bottom: 5px;">The KDE heatmaps above are conditioned on location only. To evaluate the <em>specific</em> grand slam pitch, we feed its full pitching profile — location, speed, spin rate, movement, and count — into the RF and GBM models:</p>
 
 <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
   <div style="flex: 1; min-width: 180px; background: #f0fdf4; border: 2px solid #059669; padding: 18px; border-radius: 10px; text-align: center;">
