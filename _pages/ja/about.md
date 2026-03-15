@@ -71,31 +71,6 @@ author_profile: true
   </div>
 </div>
 
-## スキル・言語
-
-<div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
-  <div style="flex: 1; min-width: 250px;">
-    <h4 style="color: #1e3a5f; margin-bottom: 10px;">プログラミング</h4>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span style="background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">R</span>
-      <span style="background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">Python</span>
-      <span style="background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">Java</span>
-      <span style="background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">Matlab</span>
-      <span style="background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">PyTorch</span>
-      <span style="background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">TensorFlow</span>
-      <span style="background: #dbeafe; color: #1e40af; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">Scikit-learn</span>
-    </div>
-  </div>
-  <div style="flex: 1; min-width: 250px;">
-    <h4 style="color: #1e3a5f; margin-bottom: 10px;">言語能力</h4>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-      <span style="background: #fef3c7; color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">中国語（母語）</span>
-      <span style="background: #fef3c7; color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">英語（流暢）</span>
-      <span style="background: #fef3c7; color: #92400e; padding: 6px 14px; border-radius: 20px; font-size: 0.9em; font-weight: 600;">日本語（上級）</span>
-    </div>
-  </div>
-</div>
-
 ## バックグラウンド
 
 <div style="background: #f8fafc; border-left: 5px solid #8b5cf6; padding: 20px; border-radius: 8px; margin: 20px 0;">
