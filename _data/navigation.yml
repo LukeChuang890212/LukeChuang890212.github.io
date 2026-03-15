@@ -43,7 +43,7 @@ main_zh:
     url: /zh/teaching/
 
   - title: "部落格"
-    url: /year-archive/
+    url: /zh/blog/
 
   - title: "履歷"
     url: /zh/cv/
@@ -68,7 +68,7 @@ main_ja:
     url: /ja/teaching/
 
   - title: "ブログ"
-    url: /year-archive/
+    url: /ja/blog/
 
   - title: "履歴書"
     url: /ja/cv/
