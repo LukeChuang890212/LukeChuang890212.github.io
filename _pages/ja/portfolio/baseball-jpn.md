@@ -68,18 +68,18 @@ author_profile: true
 <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); padding: 25px; border-radius: 12px; margin: 25px 0; color: #e0e0e0;">
   <h3 style="color: #93c5fd; margin-top: 0; font-size: 1.3em;">大谷翔平のヒット確率モデリング</h3>
   <p style="font-size: 1.05em; line-height: 1.7; color: #f5f5f5;">
-    大谷翔平の <strong>2025年 MLBシーズンデータ</strong>（1,271スイング、169安打）を使用し、<strong>Random Forest</strong> と <strong>Gradient Boosting Machine</strong> モデルを訓練して、投球位置、球種、球速、回転数、変化量を関数として P(hit) を予測した。これらのモデルを鄭浩均の実際の満塁本塁打投球に適用し、その判断を評価した。
+    大谷翔平の <strong>2025年 MLBシーズンデータ</strong> を使用し、<strong>Random Forest</strong> と <strong>Gradient Boosting Machine</strong> モデルを訓練して、<strong>P(swing | pitch)</strong> と <strong>P(hit | swing, pitch)</strong> を別々に予測した。ここで「pitch」は完全な投球プロファイル（位置、球種、球速、回転数、変化量）を示す。統合指標 <strong>P(hit | pitch) = P(swing | pitch) × P(hit | swing, pitch)</strong> が各投球の総合的な危険度を与える。これらのモデルを鄭浩均の実際の満塁本塁打投球に適用し、その判断を評価した。
   </p>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
   <div style="flex: 1; min-width: 200px; background: #eff6ff; border: 2px solid #2563eb; padding: 15px; border-radius: 10px; text-align: center;">
     <strong style="color: #1e3a5f; font-size: 1.05em;">Random Forest</strong>
-    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">P(swing) と P(hit|swing) のノンパラメトリックアンサンブル</p>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">P(swing | pitch) と P(hit | swing, pitch) のノンパラメトリックアンサンブル</p>
   </div>
   <div style="flex: 1; min-width: 200px; background: #eff6ff; border: 2px solid #2563eb; padding: 15px; border-radius: 10px; text-align: center;">
     <strong style="color: #1e3a5f; font-size: 1.05em;">GBM</strong>
-    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">ヒット確率モデリングのための勾配ブースティング</p>
+    <p style="margin: 8px 0 0; font-size: 0.9em; color: #666;">P(swing | pitch) と P(hit | swing, pitch) の勾配ブースティング</p>
   </div>
   <div style="flex: 1; min-width: 200px; background: #eff6ff; border: 2px solid #2563eb; padding: 15px; border-radius: 10px; text-align: center;">
     <strong style="color: #1e3a5f; font-size: 1.05em;">SHAP分析</strong>
@@ -87,47 +87,80 @@ author_profile: true
   </div>
 </div>
 
-### 大谷翔平のヒットゾーン（2025年 MLBシーズン）
+### 大谷翔平の打撃プロファイル：P(swing | loc)、P(hit | swing, loc)、P(hit | loc)（2025年 MLBシーズン）
 
-<img src="/images/jpn_ohtani_hit_heatmap.png" alt="大谷翔平 2025年ヒットヒートマップ" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
+<img src="/images/jpn_ohtani_kde_heatmap.png" alt="大谷翔平 KDE ヒートマップ" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
 
-<p style="color: #666; font-size: 0.95em;">大谷翔平の2025年打撃プロファイル：ヒット密度のKDE（左上）、ゾーンビン別ヒット率（右上）、スイング時ヒット率（左下）、単打 vs. 長打の位置（右下）。赤い星は鄭浩均の満塁本塁打カーブの位置を示す。</p>
+<p style="color: #666; font-size: 0.95em;">大谷翔平の2025年 MLB打撃データに基づくカーネル平滑化推定値、<em>位置のみ</em>を条件とする。各行は球種カテゴリ（全体、ファストボール、ブレーキング、オフスピード）、各列は確率成分。<strong>左：P(swing | loc)</strong>——大谷翔平がどこでスイングするか。<strong>中：P(hit | swing, loc)</strong>——スイング時にどこが危険か。<strong>右：P(hit | loc)</strong>——各位置の総合危険度。赤い十字は鄭浩均の満塁本塁打カーブの位置（pX=−0.46, pZ=2.16）を示す。</p>
+
+<div style="background: #eff6ff; border: 2px solid #2563eb; padding: 20px; border-radius: 10px; margin: 20px 0;">
+  <h4 style="color: #1e3a5f; margin-top: 0;">KDEから分かること</h4>
+  <p style="line-height: 1.7;"><strong>ブレーキングボールの行</strong>（第3行）を見ると、満塁本塁打カーブは <strong>P(swing | loc) が中程度</strong>で <strong>P(hit | swing, loc) が比較的低い</strong>ゾーンに着弾している。この位置の P(hit | loc) はホットゾーンではない——鄭浩均は合理的な位置に投球していた。ブレーキングボールの高危険ゾーンはインコース寄りの中央部と高めに集中しており、鄭浩均のカーブはこれらからやや離れていた。</p>
+</div>
 
 ### 満塁本塁打投球：モデルの判定
 
-<img src="/images/jpn_ohtani_hit_model.png" alt="大谷翔平満塁本塁打モデル分析" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
+<p style="color: #666; font-size: 0.95em; margin-bottom: 5px;">上記のKDEヒートマップは位置のみを条件としている。<em>特定の</em>満塁本塁打投球を評価するため、完全な投球プロファイル——位置、球速、回転数、変化量、カウント——をRFとGBMモデルに入力する：</p>
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 25px 0;">
-  <div style="flex: 1; min-width: 250px; background: #ecfdf5; border-left: 5px solid #059669; padding: 20px; border-radius: 8px;">
-    <h3 style="color: #059669; margin-top: 0;">P(hit) = 13.2%</h3>
-    <p style="font-size: 1.05em; line-height: 1.6;">鄭浩均が投じたカーブ（76.8 mph、2483 rpm、pX=-0.46、pZ=2.16）は、RF/GBMアンサンブルに基づく<strong>予測ヒット確率が約13%</strong>であった。数字上は悪い投球ではなかった。</p>
+<div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
+  <div style="flex: 1; min-width: 180px; background: #f0fdf4; border: 2px solid #059669; padding: 18px; border-radius: 10px; text-align: center;">
+    <p style="color: #059669; font-weight: bold; font-size: 1.1em; margin: 0;">P(swing | pitch)</p>
+    <p style="font-size: 1.8em; font-weight: bold; margin: 8px 0 4px; color: #1a1a2e;">~71%</p>
+    <p style="font-size: 0.8em; color: #666; margin: 0;">GBM: 74.8% · RF: 67.5%</p>
   </div>
-  <div style="flex: 1; min-width: 250px; background: #fefce8; border-left: 5px solid #ca8a04; padding: 20px; border-radius: 8px;">
-    <h3 style="color: #ca8a04; margin-top: 0;">鄭浩均は勇気ある選択をした</h3>
-    <p style="font-size: 1.05em; line-height: 1.6;">満塁で一塁が空いている状況（敬遠も可能）にもかかわらず、鄭浩均は<strong>真っ向勝負を選んだ</strong>——2025年ワールドシリーズで同様の状況で大谷翔平を敬遠したブルージェイズとは対照的であった。これは勇敢な決断だった。</p>
+  <div style="flex: 0 0 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: #999;">×</div>
+  <div style="flex: 1; min-width: 180px; background: #f0fdf4; border: 2px solid #059669; padding: 18px; border-radius: 10px; text-align: center;">
+    <p style="color: #059669; font-weight: bold; font-size: 1.1em; margin: 0;">P(hit | swing, pitch)</p>
+    <p style="font-size: 1.8em; font-weight: bold; margin: 8px 0 4px; color: #1a1a2e;">~13%</p>
+    <p style="font-size: 0.8em; color: #666; margin: 0;">GBM: 12.5% · RF: 14.0%</p>
+  </div>
+  <div style="flex: 0 0 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; color: #999;">=</div>
+  <div style="flex: 1; min-width: 180px; background: #ecfdf5; border: 2px solid #047857; padding: 18px; border-radius: 10px; text-align: center;">
+    <p style="color: #047857; font-weight: bold; font-size: 1.1em; margin: 0;">P(hit | pitch)</p>
+    <p style="font-size: 1.8em; font-weight: bold; margin: 8px 0 4px; color: #047857;">~9%</p>
+    <p style="font-size: 0.8em; color: #666; margin: 0;">GBM: 9.4% · RF: 9.5%</p>
   </div>
 </div>
 
-### 大谷翔平のヒット確率を左右する要因
+<div style="background: #fefce8; border-left: 5px solid #ca8a04; padding: 20px; border-radius: 8px; margin: 20px 0;">
+  <h4 style="color: #92400e; margin-top: 0;">投球品質——位置だけでなく——がこれを良い投球にした理由</h4>
+  <p style="line-height: 1.7; margin-bottom: 12px;">SHAP分析により、位置以外で P(hit | swing, pitch) を抑制した特徴が明らかになった：</p>
+  <ul style="line-height: 2;">
+    <li><strong>回転数（2,483 rpm）</strong>——P(hit | swing, pitch) を下げる最大の要因。高回転がより鋭く遅いブレークを生み、クリーンなコンタクトを困難にする。</li>
+    <li><strong>縦変化量（pfx_z = −7.09 in.）</strong>——強い落下でバットがボールの軌道の下を通過し、弱い打球や空振りを誘発。</li>
+    <li><strong>球速（76.8 mph）</strong>——鄭浩均のファストボールとの20+ mphの速度差が大谷翔平のスイングタイミングを崩す。</li>
+    <li><strong>回転軸（45°）</strong>——落下とアームサイドの動きの組み合わせが投球の変化を欺瞞的にする。</li>
+  </ul>
+  <p style="line-height: 1.7; margin-bottom: 0;">投球がゾーン内にあったこと（P(swing | pitch) を上昇させる）にもかかわらず、これらの品質が P(hit | swing, pitch) をわずか約13%に抑えた——大谷翔平の全体的なスイング時打率を大きく下回る。<strong>これは確かに良い投球であった。</strong></p>
+</div>
 
-<img src="/images/jpn_ohtani_shap.png" alt="大谷翔平ヒットモデルのSHAP分析" style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 25px 0;">
+  <div style="flex: 1; min-width: 250px; background: #ecfdf5; border-left: 5px solid #059669; padding: 20px; border-radius: 8px;">
+    <h3 style="color: #059669; margin-top: 0;">P(hit | pitch) ≈ 9%</h3>
+    <p style="font-size: 1.05em; line-height: 1.6;">スイング確率とコンタクト品質を組み合わせると、このカーブは<strong>約9%のヒット確率</strong>しかなかった。投球の回転、変化、速度差がすべて P(hit | pitch) を抑制した——91%の生存率は妥当な賭けであった。</p>
+  </div>
+  <div style="flex: 1; min-width: 250px; background: #fefce8; border-left: 5px solid #ca8a04; padding: 20px; border-radius: 8px;">
+    <h3 style="color: #ca8a04; margin-top: 0;">鄭浩均は勇気ある選択をした</h3>
+    <p style="font-size: 1.05em; line-height: 1.6;">満塁の状況で、鄭浩均は<strong>真っ向勝負を選んだ</strong>——2025年ワールドシリーズで同様の状況で大谷翔平を敬遠したブルージェイズとは対照的であった。モデルはこれが勇敢かつ統計的に合理的な判断であったことを裏付けた。</p>
+  </div>
+</div>
 
-<p style="color: #666; font-size: 0.95em;">SHAPサマリー（左上）、満塁本塁打投球の個別分解（右上）、垂直位置と球速の依存プロット（下段）。満塁本塁打カーブのSHAP分解は P(hit|swing) = 12.5% を示す——回転数とゾーン内であることがやや押し上げたが、位置と垂直変化量が抑制した。</p>
+### 最適配球戦略：鄭浩均はどこを狙うべきだったか？
 
-### 最適配球戦略
+<p style="color: #666; font-size: 0.95em; margin-bottom: 5px;">鄭浩均の満塁本塁打カーブは P(hit | pitch) ≈ 9%——既に低い値であった。しかしさらに良くできたか？KDEヒートマップは位置のみを条件とし、モデル判定は<em>1球の特定投球</em>を条件とする。戦略の問いに答えるには、<strong>位置</strong>を変化させつつ鄭浩均の投球プロファイルを固定する必要がある——各球種の平均球速、回転数、変化量を使用する。これにより P(hit | Cheng's profile, loc) の実用的マップが得られる：鄭浩均の4球種それぞれ、どこを狙うべきだったか？</p>
 
-<img src="/images/jpn_ohtani_pitch_strategy.png" alt="最適投球位置戦略" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
+<img src="/images/jpn_ohtani_pitch_strategy_decomp.png" alt="配球戦略分解——鄭浩均 vs 大谷、鄭浩均のプロファイルで条件付け" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin: 20px 0;">
 
-<p style="color: #666; font-size: 0.95em;"><strong>P(hit) = P(swing) x P(hit|swing)</strong>——GBMとRFのアンサンブル平均、ストライクゾーン内に制約。青い点は各球種で最も低い P(hit) の位置を示し、赤い×は鄭浩均が実際に満塁本塁打カーブを投じた位置。各球種において、より低い予測ヒット確率の位置が存在した。</p>
+<p style="color: #666; font-size: 0.95em;">GBMとRFのアンサンブル平均、<strong>鄭浩均の各球種平均投球プロファイル</strong>で条件付け（カウント2-1）。各行は鄭浩均の4球種の1つ（フォーシームファストボール、カーブ、チェンジアップ、スライダー）。<strong>左：P(swing | Cheng's profile, loc)</strong>——鄭浩均の投球に対して大谷翔平がどこでスイングするか。<strong>中：P(hit | swing, Cheng's profile, loc)</strong>——コンタクトがどこで最も危険か。<strong>右：P(hit | Cheng's profile, loc)</strong>——総合危険度指標。赤い十字は鄭浩均が実際に満塁本塁打カーブを投じた位置、青い星は各球種の最適（最低P(hit)）位置を示す。重要な知見：P(hit | swing, Cheng's profile, loc) が高くても P(swing | Cheng's profile, loc) が低いゾーン（例：低め外角）があり、コンタクト危険度が高くても戦略的に安全である。</p>
 
 <div style="background: #1a1a2e; padding: 25px; border-radius: 12px; margin: 25px 0; text-align: center;">
-  <p style="color: #93c5fd; font-size: 1.3em; font-weight: bold; margin: 0;">モデルの推奨</p>
+  <p style="color: #93c5fd; font-size: 1.3em; font-weight: bold; margin: 0;">モデルの推奨（青い星 = 最適位置）</p>
   <div style="display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
-    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">チェンジアップ</span><br><span style="color: #aaa;">低め内角——P(hit) = 4.1%</span></div>
-    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">ファストボール</span><br><span style="color: #aaa;">低め外角——P(hit) = 3.6%</span></div>
-    <div><span style="font-size: 1.6em; font-weight: bold; color: #fca5a5;">カーブ</span><br><span style="color: #aaa;">鄭浩均の選択——P(hit) = 4.8%*</span></div>
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">ファストボール</span><br><span style="color: #aaa;">低め外角 — P(hit | Cheng's FF, loc*) = 3.6%</span></div>
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">チェンジアップ</span><br><span style="color: #aaa;">低め内角 — P(hit | Cheng's CH, loc*) = 4.1%</span></div>
+    <div><span style="font-size: 1.6em; font-weight: bold; color: #7fecb3;">カーブ</span><br><span style="color: #aaa;">最適位置 — P(hit | Cheng's CU, loc*) = 4.8%</span></div>
   </div>
-  <p style="color: #888; font-size: 0.85em; margin-top: 15px;">*最適カーブ位置での値。鄭浩均が実際に投じた位置では 13.2%。低め外角ファストボールまたは低め内角チェンジアップが統計的に最も安全な選択であった。</p>
+  <p style="color: #888; font-size: 0.85em; margin-top: 15px;">loc* = 青い星（最適位置）。赤い十字 = 鄭浩均が実際に投じた位置（P(hit | pitch) ≈ 9%）。すべての値は鄭浩均の球種別平均投球プロファイルで条件付け。カーブを最適位置に投じても（4.8%）、低め外角ファストボール（3.6%）や低め内角チェンジアップ（4.1%）よりリスクが高い。</p>
 </div>
 
 ---
@@ -137,12 +170,12 @@ author_profile: true
 <div style="background: #f8fafc; border: 2px solid #334155; padding: 25px; border-radius: 10px; margin: 20px 0;">
   <ol style="line-height: 2; font-size: 1.05em;">
     <li><strong>鄭浩均のカウント制御が真の問題</strong>——繰り返し打者にカウントで先行を許し、大谷翔平の打席前に満塁の状況を作った。崩壊は1球ではなく、パターンによって引き起こされた。</li>
-    <li><strong>満塁本塁打の投球は悪い球ではなかった</strong>——予測ヒット確率 13.2% のカーブは妥当な選択であった。鄭浩均は敬遠ではなく大谷翔平との真っ向勝負を選んだ勇気を示した。</li>
-    <li><strong>改善の余地はあった</strong>——モデルは低め外角ファストボール（P(hit) 3.6%）または低め内角チェンジアップ（4.1%）が、鄭浩均が選んだカーブの位置より統計的に安全であったことを示唆している。</li>
+    <li><strong>満塁本塁打の投球は悪い球ではなかった</strong>——RF/GBMモデルは P(swing | pitch) ≈ 71%、P(hit | swing, pitch) ≈ 13%、P(hit | pitch) ≈ 9% を示す。カーブの高回転数（2,483 rpm）、強い縦変化（−7.09 in.）、20+ mphの速度差がヒット確率を大谷翔平の平均を大きく下回る水準に抑えた。鄭浩均は敬遠ではなく真っ向勝負を選んだ勇気を示した。</li>
+    <li><strong>改善の余地はあった</strong>——鄭浩均自身の投球プロファイルで条件付けすると、最適カーブ位置（青い星）は P(hit | Cheng's CU, loc) を9%から4.8%に低減できた。しかし低め外角ファストボール（3.6%）や低め内角チェンジアップ（4.1%）がさらに安全な選択であった。</li>
     <li><strong>鄭浩均降板後も失点は続いた</strong>——胡と沙は合計5自責点を記録し、これがチーム全体の守備崩壊であり、一人の投手の失敗ではなかったことを証明した。</li>
   </ol>
 </div>
 
 <div style="background: #f8f9fa; border: 1px solid #dee2e6; padding: 20px; border-radius: 8px; margin-top: 25px; font-style: italic; color: #555;">
-  野球は確率のスポーツである。13%のヒットが満塁本塁打となり、一つの物語が生まれる。しかしデータはより繊細な真実を語る——体系的なカウント管理の問題、勇敢な投球判断、そしてこのスポーツを美しくする残酷なランダム性の物語を。
+  野球は確率のスポーツである。P(hit | pitch) ≈ 9%の投球——高回転、鋭い変化、20 mphの速度差によって抑制された——が満塁本塁打となり、一つの物語が生まれる。しかしデータはより繊細な真実を語る——体系的なカウント管理の問題、勇敢な投球判断、そしてこのスポーツを美しくする残酷なランダム性の物語を。
 </div>
