@@ -17,8 +17,8 @@ main:
   - title: "Teaching"
     url: /teaching/
 
-  - title: "Blog Posts"
-    url: /year-archive/
+  # - title: "Blog Posts"
+  #   url: /year-archive/
 
   - title: "CV"
     url: /cv/
@@ -42,8 +42,8 @@ main_zh:
   - title: "教學"
     url: /zh/teaching/
 
-  - title: "部落格"
-    url: /zh/blog/
+  # - title: "部落格"
+  #   url: /zh/blog/
 
   - title: "履歷"
     url: /zh/cv/
@@ -67,8 +67,8 @@ main_ja:
   - title: "授業"
     url: /ja/teaching/
 
-  - title: "ブログ"
-    url: /ja/blog/
+  # - title: "ブログ"
+  #   url: /ja/blog/
 
   - title: "履歴書"
     url: /ja/cv/
