@@ -20,13 +20,6 @@ author_profile: true
 <div style="position: relative; margin: 25px 0; padding-left: 30px; border-left: 3px solid #2563eb;">
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
-    <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px;">
-      <strong style="color: #92400e; font-size: 1.05em;">統計學博士 — University of Michigan, Ann Arbor</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">預計 2026 年秋季入學</p>
-    </div>
-  </div>
-  <div style="margin-bottom: 25px; position: relative;">
-    <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f5f3ff; border: 2px solid #8b5cf6; padding: 15px; border-radius: 8px;">
       <strong style="color: #4c1d95; font-size: 1.05em;">統計學與資料科學碩士 — 國立清華大學</strong>
       <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2022 年 9 月 – 2025 年 6 月 · 新竹，台灣</p>

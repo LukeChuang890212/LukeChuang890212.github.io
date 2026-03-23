@@ -10,7 +10,7 @@ redirect_from:
 <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #2563eb 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #93c5fd; margin-top: 0; font-size: 1.6em;">Welcome!</h2>
   <p style="font-size: 1.15em; line-height: 1.8; color: #f5f5f5;">
-    I am <strong>Ming-Ju (Luke) Chuang</strong>, a Research Assistant at the Institute of Statistics and Data Science, <strong>National Tsing Hua University (NTHU)</strong>, working under the supervision of Professor Yu-Jen Cheng. I will begin my <strong>Ph.D. in Statistics</strong> at the <strong style="color: #fbbf24;">University of Michigan, Ann Arbor</strong> in Fall 2026.
+    I am <strong>Ming-Ju (Luke) Chuang</strong>, a Research Assistant at the Institute of Statistics and Data Science, <strong>National Tsing Hua University (NTHU)</strong>, working under the supervision of Professor Yu-Jen Cheng.
   </p>
 </div>
 
@@ -44,13 +44,6 @@ redirect_from:
 ## Life Journey
 
 <div style="position: relative; margin: 25px 0; padding-left: 30px; border-left: 3px solid #2563eb;">
-  <div style="margin-bottom: 25px; position: relative;">
-    <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
-    <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px;">
-      <strong style="color: #92400e; font-size: 1.05em;">Ph.D. in Statistics — University of Michigan, Ann Arbor</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">Fall 2026 (Incoming)</p>
-    </div>
-  </div>
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">

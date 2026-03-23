@@ -22,13 +22,6 @@ redirect_from:
 <div style="position: relative; margin: 25px 0; padding-left: 30px; border-left: 3px solid #2563eb;">
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
-    <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px;">
-      <strong style="color: #92400e; font-size: 1.05em;">Ph.D. in Statistics — University of Michigan, Ann Arbor</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">Expected Fall 2026</p>
-    </div>
-  </div>
-  <div style="margin-bottom: 25px; position: relative;">
-    <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f5f3ff; border: 2px solid #8b5cf6; padding: 15px; border-radius: 8px;">
       <strong style="color: #4c1d95; font-size: 1.05em;">M.S. in Statistics and Data Science — National Tsing Hua University</strong>
       <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">Sept. 2022 – June 2025 · Hsinchu, Taiwan</p>

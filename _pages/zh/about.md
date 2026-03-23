@@ -7,7 +7,7 @@ author_profile: true
 <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #2563eb 100%); padding: 30px; border-radius: 12px; margin-bottom: 30px; color: #e0e0e0;">
   <h2 style="color: #93c5fd; margin-top: 0; font-size: 1.6em;">歡迎！</h2>
   <p style="font-size: 1.15em; line-height: 1.8; color: #f5f5f5;">
-    我是<strong>莊明儒（Ming-Ju (Luke) Chuang）</strong>，目前在<strong>國立清華大學統計學研究所</strong>擔任研究助理，師從鄭又仁教授。2026 年秋季，我將赴<strong style="color: #fbbf24;">University of Michigan, Ann Arbor</strong> 攻讀<strong>統計學博士</strong>學位。
+    我是<strong>莊明儒（Ming-Ju (Luke) Chuang）</strong>，目前在<strong>國立清華大學統計學研究所</strong>擔任研究助理，師從鄭又仁教授。
   </p>
 </div>
 
@@ -41,13 +41,6 @@ author_profile: true
 ## 人生旅途
 
 <div style="position: relative; margin: 25px 0; padding-left: 30px; border-left: 3px solid #2563eb;">
-  <div style="margin-bottom: 25px; position: relative;">
-    <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
-    <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px;">
-      <strong style="color: #92400e; font-size: 1.05em;">統計學博士 — University of Michigan, Ann Arbor</strong>
-      <p style="margin: 5px 0 0; color: #666; font-size: 0.9em;">2026 年秋季入學</p>
-    </div>
-  </div>
   <div style="margin-bottom: 25px; position: relative;">
     <div style="position: absolute; left: -39px; top: 3px; width: 16px; height: 16px; background: #2563eb; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px #2563eb;"></div>
     <div style="background: #f0fdf4; border: 2px solid #22c55e; padding: 15px; border-radius: 8px;">
